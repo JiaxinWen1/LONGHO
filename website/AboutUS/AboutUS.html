@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link rel="stylesheet" href="./AboutUS.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-background"></div>
+        <div class="header-content">
+            <img src="../picture/LOGO.png" alt="logo" class="logo">
+            <h1>LONGHO</h1>
+            <div class="nav">
+                <a href="../Homepage/Homepage.html" class="nav-link" data-i18n="nav.home">首页</a>
+                <a href="../Product/Product.html" class="nav-link" data-i18n="nav.products">产品</a>
+                <a href="../AboutUs/AboutUs.html" class="nav-link" data-i18n="nav.about">关于我们</a>
+                <a href="../ContactUS/ContactUS.html" class="nav-link" data-i18n="nav.contact">联系我们</a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="搜索..." data-i18n-placeholder="search.placeholder">
+                <button class="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line> 
+                    </svg>
+                </button>
+            </div>
+            <div class="language-switch">
+                <button class="lang-btn" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="about-us-container">
+            <div class="about-us-content">
+                <h1 data-i18n="about.title">关于我们</h1>
+                <p data-i18n="about.content">LONGHO公司是一家专注于智能设备研发和生产的公司，致力于为客户提供高品质的产品和优质的服务。</p>
+            </div>
+        </div>
+    </div>
+    <script src="../Public JS/language.js"></script>
+    <script src="../Public JS/search.js"></script>
+    <script src="./AboutUS.js"></script>
+</body>
+</html>
