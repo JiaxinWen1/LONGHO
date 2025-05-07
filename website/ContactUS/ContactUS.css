@@ -20,10 +20,10 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 18px;
+    height: 60px;
     display: flex;
     align-items: center;
-    padding: 20px 32px;
+    padding: 0 32px;
     background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
     z-index: 2;
 }
