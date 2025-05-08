@@ -312,7 +312,7 @@ body {
     flex-shrink: 0;
     position: fixed;
     top: 50%;
-    left: calc((100% - 1280px) / 2); /* 居中计算 */
+    left: calc((100% - 1380px) / 2); /* 居中计算 */
     transform: translateY(-50%); /* 垂直居中 */
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -339,7 +339,7 @@ body {
 
 .category-item:hover {
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.5));
+    background-color: rgba(0, 0, 0, 0.5);
     transform: translateX(5px);
 }
 
@@ -373,6 +373,123 @@ body {
         border-radius: 20px;
         margin-bottom: 0;
         text-align: center;
+    }
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding-right: 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #f39c12;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-contact-item svg {
+    margin-right: 10px;
+    flex-shrink: 0;
+    min-width: 16px;
+    height: 16px;
+    margin-top: 0;
+}
+
+.footer-contact-item p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    width: 100%;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* 最后一个联系方式项目不需要底部间距 */
+.footer-contact-item:last-child {
+    margin-bottom: 0;
+}
+
+/* 响应式布局 - 页脚 */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        width: 100%;
+        padding-right: 0;
     }
 }
 

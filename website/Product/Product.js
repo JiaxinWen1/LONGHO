@@ -1,18 +1,33 @@
 // 等待DOM加载完成
 document.addEventListener('DOMContentLoaded', function() {
-    // 初始化分类栏点击效果
-    initCategorySelection();
+    // 初始化分类栏
+    initCategories();
+    
+    // 初始化产品展示
+    initProducts();
 });
 
-// 初始化分类栏点击效果
-function initCategorySelection() {
+// 初始化分类栏
+function initCategories() {
+    const categoryList = document.querySelector('.category-list');
+    const categories = getAllCategories();
+    
+    // 添加"全部"分类选项
+    const allCategoryItem = document.createElement('li');
+    allCategoryItem.className = 'category-item active';
+    allCategoryItem.textContent = '全部';
+    categoryList.appendChild(allCategoryItem);
+    
+    // 添加所有产品分类
+    categories.forEach(category => {
+        const categoryItem = document.createElement('li');
+        categoryItem.className = 'category-item';
+        categoryItem.textContent = category;
+        categoryList.appendChild(categoryItem);
+    });
+    
+    // 为所有分类项添加点击事件
     const categoryItems = document.querySelectorAll('.category-item');
-    
-    // 默认激活第一个分类
-    if (categoryItems.length > 0) {
-        categoryItems[0].classList.add('active');
-    }
-    
     categoryItems.forEach(item => {
         item.addEventListener('click', function() {
             // 移除所有分类项的激活状态
@@ -31,27 +46,41 @@ function initCategorySelection() {
     });
 }
 
+// 初始化产品展示
+function initProducts() {
+    // 默认显示所有产品
+    renderProducts(productsData);
+}
+
+// 渲染产品列表
+function renderProducts(products) {
+    const productGrid = document.querySelector('.product-grid');
+    productGrid.innerHTML = ''; // 清空现有内容
+    
+    // 遍历产品数据，创建产品卡片
+    products.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.className = 'product-item';
+        productItem.setAttribute('data-category', product.category);
+        
+        productItem.innerHTML = `
+            <a href="ProductDetail.html?id=${product.id}" class="product-link">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                </div>
+            </a>
+        `;
+        
+        productGrid.appendChild(productItem);
+    });
+}
+
 // 产品筛选函数
 function filterProductsByCategory(category) {
-    // 获取所有产品项
-    const productItems = document.querySelectorAll('.product-item');
-    
-    // 如果分类是"全部"，显示所有产品
-    if (category === '全部') {
-        productItems.forEach(item => {
-            item.style.display = 'block';
-        });
-        return;
-    }
-    
-    // 根据分类显示或隐藏产品
-    productItems.forEach(item => {
-        const productCategory = item.getAttribute('data-category');
-        
-        if (productCategory === category) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
-    });
+    const products = getProductsByCategory(category);
+    renderProducts(products);
 }
