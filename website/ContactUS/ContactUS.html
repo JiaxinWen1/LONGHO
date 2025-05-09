@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homepage</title>
+    <title>联系我们</title>
     <link rel="stylesheet" href="./ContactUS.css">
 </head>
 <body>
@@ -33,16 +33,115 @@
             </div>
         </div>
     </div>
-    <div class="content">
-        <div class="contact-us-container">
-            <div class="contact-us-content">
-                <h1 data-i18n="contact.title">联系我们</h1>
-                <p><span data-i18n="contact.phone">电话</span>:1234567890</p>
-                <p><span data-i18n="contact.email">邮箱</span>:1234567890@163.com</p>
-                <p><span data-i18n="contact.address">地址</span>:<span data-i18n="contact.address1">广东省东莞市</span></p>
+
+    <!-- 主体内容包装器，用于背景图 -->
+    <div class="main-content-wrapper">
+        <!-- 主要内容区域，类似图片中的格式 -->
+        <div class="contact-banner">
+            <div class="banner-overlay">
+                <h1 data-i18n="contact.banner_text1">联系我们，</h1>
+                <h1 data-i18n="contact.banner_text2">LONGHO诚邀合作，共赢未来</h1>
+            </div>
+        </div>
+
+        <!-- 白色容器包装所有联系信息 -->
+        <div class="white-container">
+            <div class="contact-info-container">
+                <div class="info-row main-contacts">
+                    <div class="info-item main-contact-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="info-text">
+                            <h2>+86 123 4567 8910</h2>
+                            <p data-i18n="contact.company_phone">公司总机</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item main-contact-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"></path>
+                                <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.07 0L2 10"></path>
+                            </svg>
+                        </div>
+                        <div class="info-text">
+                            <h2>123344455@111.com</h2>
+                            <p data-i18n="contact.email">Email</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="additional-info-container">
+                    <div class="info-row">
+                        <div class="info-item">
+                            <a href="https://map.baidu.com/poi/%E6%9C%97%E6%B5%A9%E7%A7%91%E6%8A%80/@12657865.1721992,2612304.8991232384,18.35z?uid=1bd1c29d0e9055f1223bf2a7&ugc_type=3&ugc_ver=1&device_ratio=2&compat=1&pcevaname=pc4.1&querytype=detailConInfo&da_src=shareurl" target="_blank" class="map-link" data-tooltip="点击查看地图" data-i18n-tooltip="contact.map.view">
+                                <div class="info-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="info-text">
+                                    <p data-i18n="contact.company_location">广东省东莞市厚街镇</p>
+                                    <p data-i18n="contact.company_zip">(123456)</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <p data-i18n="contact.company_fax">公司传真</p>
+                                <p data-i18n="contact.company_fax.number">+86-123-4567890</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <p data-i18n="contact.media">没想好写啥</p>
+                                <p data-i18n="contact.media.email">info@longho.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 11 12 14 22 4"></polyline>
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <p data-i18n="contact.other">也没想好写啥</p>
+                                <p data-i18n="contact.other.qrcode">查看二维码</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- 添加地图背景区域 -->
+    <div class="map-background"></div>
     
     <footer class="footer">
         <div class="footer-container">

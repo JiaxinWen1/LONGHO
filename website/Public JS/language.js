@@ -22,6 +22,13 @@ const translations = {
         'contact.email': '邮箱',
         'contact.address': '地址',
         'contact.address1': '广东省东莞市',
+        'contact.banner_text1': '联系我们，',
+        'contact.banner_text2': 'LONGHO诚邀合作，共赢未来',
+        'contact.company_phone': '公司总机',
+        'contact.company_fax': '公司传真',
+        'contact.company_location': '广东省东莞市厚街镇',
+        'contact.company_zip': '(123456)',
+        'contact.map.view': '点击查看地图',
         
         // 搜索结果页面
         'search.results': '搜索结果',
@@ -70,6 +77,17 @@ const translations = {
         'contact.email': 'Email',
         'contact.address': 'Address',
         'contact.address1': 'Dongguan City, Guangdong Province',
+        'contact.banner_text1': 'Contact Us,',
+        'contact.banner_text2': 'LONGHO invites cooperation for a win-win future',
+        'contact.company_phone': 'Main Line',
+        'contact.company_fax': 'Fax',
+        'contact.company_location': 'Houjie Town, Dongguan City, Guangdong Province',
+        'contact.company_zip': '(123456)',
+        'contact.media': 'To Be Filled',
+        'contact.media.email': 'info@longho.com',
+        'contact.other': 'Also To Be Filled',
+        'contact.other.qrcode': 'View QR Code',
+        'contact.map.view': 'View on Map',
         
         // Search results page
         'search.results': 'Search Results',
@@ -97,9 +115,12 @@ const translations = {
     }
 };
 
+// 获取用户之前选择的语言，如果没有则默认为中文
 let currentLang = localStorage.getItem('language') || 'zh';
 
+// 设置语言函数
 function setLanguage(lang) {
+    // 存储当前语言
     currentLang = lang;
     localStorage.setItem('language', lang);
     
@@ -121,6 +142,30 @@ function setLanguage(lang) {
             element.placeholder = translations[lang][key];
         }
     });
+    
+    // 更新所有带有 data-i18n-title 属性的元素
+    document.querySelectorAll('[data-i18n-title]').forEach(element => {
+        const key = element.getAttribute('data-i18n-title');
+        if (translations[lang][key]) {
+            element.title = translations[lang][key];
+        }
+    });
+    
+    // 更新所有带有 data-i18n-alt 属性的元素
+    document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+        const key = element.getAttribute('data-i18n-alt');
+        if (translations[lang][key]) {
+            element.alt = translations[lang][key];
+        }
+    });
+    
+    // 更新所有带有 data-i18n-tooltip 属性的元素
+    document.querySelectorAll('[data-i18n-tooltip]').forEach(element => {
+        const key = element.getAttribute('data-i18n-tooltip');
+        if (translations[lang][key]) {
+            element.setAttribute('data-tooltip', translations[lang][key]);
+        }
+    });
 
     // 更新语言按钮状态
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -131,7 +176,14 @@ function setLanguage(lang) {
         }
     });
     
-    // 触发语言变更事件
+    // 更新HTML标签的lang属性
+    document.documentElement.lang = lang;
+    
+    // 根据不同语言应用不同的样式（如果需要）
+    document.body.classList.remove('lang-zh', 'lang-en');
+    document.body.classList.add('lang-' + lang);
+    
+    // 触发语言变更事件，让其他脚本可以感知语言变化
     const event = new CustomEvent('languageChanged', { detail: { language: lang } });
     document.dispatchEvent(event);
 }
@@ -160,13 +212,25 @@ function updatePageTitle(lang) {
 
 // 初始化语言
 document.addEventListener('DOMContentLoaded', () => {
+    // 应用保存的语言设置
     setLanguage(currentLang);
 
     // 添加语言切换按钮事件监听
     document.querySelectorAll('.lang-btn').forEach(btn => {
+        // 根据当前语言设置按钮状态
+        if (btn.getAttribute('data-lang') === currentLang) {
+            btn.classList.add('active');
+        }
+        
+        // 添加点击事件
         btn.addEventListener('click', () => {
             const lang = btn.getAttribute('data-lang');
             setLanguage(lang);
         });
+    });
+    
+    // 监听URL变化，在页面切换后应用语言
+    window.addEventListener('popstate', () => {
+        setLanguage(currentLang);
     });
 }); 

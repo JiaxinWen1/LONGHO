@@ -1,9 +1,25 @@
+/* 页面整体背景设置 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-image: url('../picture/background.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
 .header {
     position: relative;
     width: 100%;
     height: 80px;
     padding: 0;
     margin: 0;
+    background-color: transparent;
 }
 
 .header::before {
@@ -117,51 +133,279 @@
 .content {
     width: 100%;
     height: 100%;
-
 }
 
-.contact-us-container {
+body::before {
+    content: none;
+}
+
+/* 创建主体内容容器 */
+.main-content-wrapper {
+    position: relative;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+/* 联系我们banner区域 */
+.contact-banner {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    overflow: hidden;
+}
+
+.banner-overlay {
+    width: 100%;
+    padding: 0 10%;
+    color: white;
+    z-index: 1;
+}
+
+.banner-overlay h1 {
+    font-size: 3rem;
+    margin: 0.2em 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.banner-overlay h1:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.banner-overlay h1:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 白色容器样式调整 */
+.white-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 0 auto 50px;
+    width: 70%;
+    height: auto;
+    min-height: 0;
+    max-width: 1000px;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 联系信息卡片区域 */
+.contact-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* 主联系方式样式 */
+.info-row.main-contacts {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.main-contact-item {
+    display: flex;
+    width: 45%;
+    align-items: center;
+}
+
+.main-contact-item .info-text h2 {
+    font-size: 1.8rem;
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.main-contact-item .info-text p {
+    margin: 0;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* 分隔线 */
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    margin: 0 0 30px;
+}
+
+/* 附加信息区域 */
+.additional-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+/* 联系信息项样式 */
+.info-item {
+    display: flex;
+    width: 45%;
+    align-items: center;
+}
+
+/* 图标基本样式 - 所有图标的静态样式 */
+.info-icon {
+    margin-right: 15px;
+    color: #333;
+    width: 40px;
+    height: 40px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 
-.contact-us-content {
-    text-align: center;
-    color: #000000;
-    padding: 20px;
-    border-radius: 10px;    
+/* 只为地址图标添加悬停效果 (第一行第一个图标) */
+.additional-info-container .info-row:first-child .info-item:first-child .info-icon {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.additional-info-container .info-row:first-child .info-item:first-child:hover .info-icon {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+}
+
+/* 图标SVG基本样式 */
+.info-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-text p {
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.info-text p:first-child {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.info-text p:last-child {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 媒体查询调整 */
+@media (max-width: 992px) {
+    .white-container {
+        width: 85%;
+        height: auto;
+    }
+    
+    .info-row, .info-row.main-contacts {
+        flex-direction: column;
+    }
+    
+    .info-item, .main-contact-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-overlay h1 {
+        font-size: 2rem;
+    }
 }
 
 /* 语言切换 */
 .language-switch {
-    margin-left: 20px;
     display: flex;
-    gap: 10px;
+    margin-left: 20px;
+    gap: 5px;
 }
 
 .lang-btn {
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
-    cursor: pointer;
+    color: #fff;
+    padding: 5px 8px;
     font-size: 14px;
-    transition: all 0.3s ease;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .lang-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .lang-btn.active {
-    background: #fff;
-    color: #000;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+}
+
+/* 不同语言的特定样式 */
+body.lang-en .banner-overlay h1 {
+    letter-spacing: normal;
+}
+
+body.lang-zh .banner-overlay h1 {
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .language-switch {
+        margin-left: 10px;
+    }
+    
+    .lang-btn {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+}
+
+/* 添加地图背景区域 */
+.map-background {
+    width: 100%;
+    height: 400px;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
 }
 
 /* 页脚样式 */
@@ -169,7 +413,9 @@
     background-color: #333;
     color: #fff;
     padding: 40px 0 20px;
-    margin-top: 50px;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-container {
@@ -267,7 +513,7 @@
     color: #aaa;
 }
 
-/* 响应式布局 - 页脚 */
+/* 页脚响应式布局 */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
@@ -277,4 +523,65 @@
         width: 100%;
         padding-right: 0;
     }
+}
+
+/* 地图链接样式 */
+.map-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.map-link:hover {
+    transform: translateY(-2px);
+}
+
+.map-link:hover .info-icon {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-link:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -20px;
+    left: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+    white-space: nowrap;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 只为地址图标添加悬停效果 */
+.map-link .info-icon {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 移除其他地址图标效果，避免重复 */
+.additional-info-container .info-row:first-child .info-item:first-child .info-icon {
+    transition: none;
+}
+
+.additional-info-container .info-row:first-child .info-item:first-child:hover .info-icon {
+    transform: none;
+    background-color: #f5f5f5;
 }
