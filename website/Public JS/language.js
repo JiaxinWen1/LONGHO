@@ -8,13 +8,47 @@ const translations = {
         'nav.contact': '联系我们',
         'search.placeholder': '搜索...',
         
+        // 轮播图部分
+        'carousel.title1': '用科技的力量做高品质的鞋',
+        'carousel.desc1': '勤劳 务实 责任 有果 创新',
+        'carousel.title2': '创新技术，引领未来',
+        'carousel.desc2': '专注于为客户提供优质解决方案',
+        'carousel.title3': '全球视野，本地服务',
+        'carousel.desc3': '我们的产品遍布全球各地',
+        'carousel.button1': '了解更多',
+        
+        // 首页部分
+        'home.about_title': '关于我们',
+        'home.about_subtitle': '朗浩科技有限公司',
+        'home.about_desc': '是一家国家级高新技术企业。自 2012 年成立，经过十年的持续改善及创新，现已发展成为集制鞋及自动化装备研发为一体的新型制鞋企业。公司不断加强和高校的联合开发，加强新型材料和功能的运用，逐渐培养出一支具备高新技术人才的管理团队。公司拥有自主的研发设计团队，现已成长为从研发到生产销售一体的全功能性企业',
+        'home.about_button': '查看更多',
+        'home.products_title': '产品展示',
+        'home.product1_title': '产品类型1',
+        'home.product1_desc': '高品质产品，满足您的需求',
+        'home.product2_title': '产品类型2',
+        'home.product2_desc': '专业设计，品质保证',
+        'home.product3_title': '产品类型3',
+        'home.product3_desc': '创新技术，卓越性能',
+        'home.product4_title': '产品类型4',
+        'home.product4_desc': '多样选择，满足各种需求',
+        'home.product_button': '查看详情',
+        'home.features_title': '我们的优势',
+        'home.feature1_title': '认证资质    ',
+        'home.feature1_desc': '已获得BSCI、SQP、CE、SATRA等认证以及数十项专利',
+        'home.feature2_title': '自主研发',
+        'home.feature2_desc': '拥有自己的实验室和研发团队',
+        'home.feature3_title': '经验丰富',
+        'home.feature3_desc': '与多家国际知名品牌合作',
+        'home.feature4_title': '客户为先',
+        'home.feature4_desc': '以客户需求为中心，提供个性化解决方案',
+        
         // 产品页面
         'product.title': '产品',
         'product.item1': '产品1',
         'product.name': 'Type1',
         // 关于我们页面
         'about.title': '关于我们',
-        'about.content': 'LONGHO公司是一家专注于智能设备研发和生产的公司，致力于为客户提供高品质的产品和优质的服务。',
+        'about.content': '朗浩科技有限公司是一家国家级高新技术企业。自 2012 年成立，经过十年的持续改善及创新，现已发展成为集制鞋及自动化装备研发为一体的新型制鞋企业。公司不断加强和高校的联合开发，加强新型材料和功能的运用，逐渐培养出一支具备高新技术人才的管理团队。公司拥有自主的研发设计团队，现已成长为从研发到生产销售一体的全功能性企业',
         
         // 联系我们页面
         'contact.title': '联系我们',
@@ -29,6 +63,11 @@ const translations = {
         'contact.company_location': '广东省东莞市厚街镇',
         'contact.company_zip': '(123456)',
         'contact.map.view': '点击查看地图',
+        'contact.media': '没想好写啥',
+        'contact.media.email': 'info@longho.com',
+        'contact.other': '也没想好写啥',
+        'contact.other.qrcode': '查看二维码',
+        'contact.company_fax.number': '+86-123-4567890',
         
         // 搜索结果页面
         'search.results': '搜索结果',
@@ -52,7 +91,10 @@ const translations = {
         'footer.category4': '类型4',
         'footer.contact': '联系方式',
         'footer.address': '东莞市厚街',
-        'footer.copyright': '© 2025.LONGHO'
+        'footer.copyright': '© 2025.LONGHO',
+        'vision.title': '愿景与计划',
+        'vision.desc': '我们致力于成为行业领先的创新型企业，不断推动制鞋工艺与自动化技术的进步。未来，公司将持续加大研发投入，拓展国际市场，提升品牌影响力，并积极践行可持续发展战略，为客户、员工和社会创造更大价值。',
+        'vision.subtitle': '引领行业创新，成就美好未来'
     },
     en: {
         // Navigation
@@ -62,11 +104,45 @@ const translations = {
         'nav.contact': 'Contact Us',
         'search.placeholder': 'Search...',
         
+        // Carousel
+        'carousel.title1': 'Producing high-quality shoes with today\'s technology',
+        'carousel.desc1': 'Dilligence, Pragmatism, Commitment, Accomplishment, Innovation',
+        'carousel.title2': 'Innovative Technology, Leading the Future',
+        'carousel.desc2': 'Dedicated to providing excellent solutions for customers',
+        'carousel.title3': 'Global Vision, Local Service',
+        'carousel.desc3': 'Our products are distributed worldwide',
+        'carousel.button1': 'Learn More',
+        
+        // Homepage
+        'home.about_title': 'About Us',
+        'home.about_subtitle': 'LONGHO',
+        'home.about_desc': 'grows to be a complex enterprise of footwear manufacturing and automatic equipment research and development and innovation. LONGHO is a fully functional company runs from sample design to production manufacturing and selling with independent design and development team.',
+        'home.about_button': 'View More',
+        'home.products_title': 'Products',
+        'home.product1_title': 'Product Type 1',
+        'home.product1_desc': 'High-quality products to meet your needs',
+        'home.product2_title': 'Product Type 2',
+        'home.product2_desc': 'Professional design, quality assurance',
+        'home.product3_title': 'Product Type 3',
+        'home.product3_desc': 'Innovative technology, excellent performance',
+        'home.product4_title': 'Product Type 4',
+        'home.product4_desc': 'Various choices to meet different needs',
+        'home.product_button': 'View Details',
+        'home.features_title': 'Our Advantages',
+        'home.feature1_title': 'Certification Qualification',
+        'home.feature1_desc': 'Has obtained BSCI, SQP, CE, SATRA and other certifications and dozens of patents',
+        'home.feature2_title': 'Independent Development',
+        'home.feature2_desc': 'Has its own laboratory and research team',
+        'home.feature3_title': 'Experienced',
+        'home.feature3_desc': 'Cooperation with many international well-known brands',
+        'home.feature4_title': 'Customer-Centric',
+        'home.feature4_desc': 'Customer-centric approach providing personalized solutions',
+        
         // Product page
         'product.title': 'Products',
         'product.item1': 'Product 1',
         'product.name': 'Type1En',
-
+ 
         // About Us page
         'about.title': 'About Us',
         'about.content': 'LONGHO Company is dedicated to the research, development and production of intelligent devices, committed to providing high-quality products and excellent service to our customers.',
@@ -111,7 +187,10 @@ const translations = {
         'footer.category4': 'Type 4',
         'footer.contact': 'Contact Information',
         'footer.address': 'Houjie, Dongguan',
-        'footer.copyright': '© 2025.LONGHO'
+        'footer.copyright': '© 2025.LONGHO',
+        'vision.title': 'Vision & Plan',
+        'vision.desc': 'We have expansion plans, expand plant, equipment, increase personnel, enhance production capacity, enhance competitiveness, and look forward to a bright future. We hope to continue to provide our customers with high quality products and services.',
+        'vision.subtitle': 'Leading Innovation, Shaping the Future'
     }
 };
 
@@ -126,6 +205,13 @@ function setLanguage(lang) {
     
     // 更新页面标题
     updatePageTitle(lang);
+    
+    // 保存当前激活的导航链接，以便后续恢复
+    const activeNav = document.querySelector('.nav-link.active');
+    let activePath = '';
+    if (activeNav) {
+        activePath = activeNav.getAttribute('href');
+    }
     
     // 更新所有带有 data-i18n 属性的元素
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -182,6 +268,31 @@ function setLanguage(lang) {
     // 根据不同语言应用不同的样式（如果需要）
     document.body.classList.remove('lang-zh', 'lang-en');
     document.body.classList.add('lang-' + lang);
+    
+    // 恢复导航链接的激活状态
+    if (typeof setActiveNavLink === 'function') {
+        // 如果页面有自己的setActiveNavLink函数，则调用它
+        setTimeout(setActiveNavLink, 0);
+    } else {
+        // 如果没有，则尝试根据当前页面路径设置active类
+        const path = window.location.pathname;
+        
+        // 移除所有导航链接的active类
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // 根据当前页面路径设置active类
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const href = link.getAttribute('href') || '';
+            if ((path.includes('Homepage') && href.includes('Homepage.html')) ||
+                (path.includes('Product') && href.includes('Product.html') && !href.includes('ProductDetail.html')) ||
+                (path.includes('AboutUs') && href.includes('AboutUS.html')) ||
+                (path.includes('ContactUS') && href.includes('ContactUS.html'))) {
+                link.classList.add('active');
+            }
+        });
+    }
     
     // 触发语言变更事件，让其他脚本可以感知语言变化
     const event = new CustomEvent('languageChanged', { detail: { language: lang } });

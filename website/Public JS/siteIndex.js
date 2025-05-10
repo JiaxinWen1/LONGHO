@@ -15,7 +15,7 @@ const siteIndexData = {
         },
         {
             title: '关于我们',
-            url: '../AboutUs/AboutUs.html',
+            url: '../AboutUs/AboutUS.html',
             keywords: ['关于我们', '公司简介', '公司', '介绍', '企业', '发展', '历史', 'about', 'about us', 'company profile', 'company'],
             description: 'LONGHO公司简介与企业发展历史'
         },
@@ -41,7 +41,7 @@ const siteIndexData = {
         },
         {
             title: 'About Us',
-            url: '../AboutUs/AboutUs.html',
+            url: '../AboutUs/AboutUS.html',
             keywords: ['about us', 'about', 'company profile', 'company', 'profile', 'history', 'introduction', '关于我们', '公司简介', '公司'],
             description: 'LONGHO Company Profile and Development History'
         },

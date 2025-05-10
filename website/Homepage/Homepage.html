@@ -13,9 +13,9 @@
             <img src="../picture/LOGO.png" alt="logo" class="logo">
             <h1>LONGHO</h1>
             <div class="nav">
-                <a href="../Homepage/Homepage.html" class="nav-link" data-i18n="nav.home">首页</a>
+                <a href="../Homepage/Homepage.html" class="nav-link active" data-i18n="nav.home">首页</a>
                 <a href="../Product/Product.html" class="nav-link" data-i18n="nav.products">产品</a>
-                <a href="../AboutUs/AboutUs.html" class="nav-link" data-i18n="nav.about">关于我们</a>
+                <a href="../AboutUs/AboutUS.html" class="nav-link" data-i18n="nav.about">关于我们</a>
                 <a href="../ContactUS/ContactUS.html" class="nav-link" data-i18n="nav.contact">联系我们</a>
             </div>
             <div class="search-container">
@@ -34,7 +34,137 @@
         </div>
     </div>
     <div class="content">
-        
+        <!-- 轮播图部分 -->
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../picture/banner1.jpg" alt="公司展示图1" class="carousel-image">
+                    <div class="carousel-caption">
+                        <h2 data-i18n="carousel.title1">用科技的力量做高品质的鞋</h2>
+                        <p data-i18n="carousel.desc1">勤劳 务实 责任 有果 创新</p>
+                        <a href="../Product/Product.html" class="btn" data-i18n="carousel.button1">了解更多</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control prev">❮</button>
+            <button class="carousel-control next">❯</button>
+        </div>
+
+        <!-- 公司简介部分 -->
+        <section class="about-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="home.about_title">关于我们</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-paragraph">
+                            <span class="about-subtitle" data-i18n="home.about_subtitle">朗浩科技有限公司</span>
+                            <span class="about-desc" data-i18n="home.about_desc">是一家国家级高新技术企业。自 2012 年成立，经过十年的持续改善及创新，现已发展成为集制鞋及自动化装备研发为一体的新型制鞋企业。公司不断加强和高校的联合开发，加强新型材料和功能的运用，逐渐培养出一支具备高新技术人才的管理团队。公司拥有自主的研发设计团队，现已成长为从研发到生产销售一体的全功能性企业</span>
+                        </p>
+                        <a href="../AboutUs/AboutUS.html" class="btn" data-i18n="home.about_button">查看更多</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="../picture/about.jpg" alt="公司图片">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 产品展示部分 -->
+        <section class="products-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="home.products_title">产品展示</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="../picture/product1.jpg" alt="产品1" class="product-image">
+                        <h3 data-i18n="home.product1_title">产品类型1</h3>
+                        <p data-i18n="home.product1_desc">高品质产品，满足您的需求</p>
+                        <a href="../Product/Product.html" class="btn" data-i18n="home.product_button">查看详情</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="../picture/product2.jpg" alt="产品2" class="product-image">
+                        <h3 data-i18n="home.product2_title">产品类型2</h3>
+                        <p data-i18n="home.product2_desc">专业设计，品质保证</p>
+                        <a href="../Product/Product.html" class="btn" data-i18n="home.product_button">查看详情</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="../picture/product3.jpg" alt="产品3" class="product-image">
+                        <h3 data-i18n="home.product3_title">产品类型3</h3>
+                        <p data-i18n="home.product3_desc">创新技术，卓越性能</p>
+                        <a href="../Product/Product.html" class="btn" data-i18n="home.product_button">查看详情</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="../picture/product4.jpg" alt="产品4" class="product-image">
+                        <h3 data-i18n="home.product4_title">产品类型4</h3>
+                        <p data-i18n="home.product4_desc">多样选择，满足各种需求</p>
+                        <a href="../Product/Product.html" class="btn" data-i18n="home.product_button">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 优势部分 -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="home.features_title">我们的优势</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="home.feature1_title">认证资质</h3>
+                        <p data-i18n="home.feature1_desc">已获得BSCI、SQP、CE、SATRA等认证以及数十项专利</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0l4.5 4.5h-3v4h-3v-4h-3L8 0z"/>
+                                <path d="M8 16l4.5-4.5h-3v-4h-3v4h-3L8 16z"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="home.feature2_title">自主研发</h3>
+                        <p data-i18n="home.feature2_desc">拥有自己的实验室和研发团队</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M2 4h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm11-1V1a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1z"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="home.feature3_title">经验丰富</h3>
+                        <p data-i18n="home.feature3_desc">与多家国际知名品牌合作</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="home.feature4_title">客户为先</h3>
+                        <p data-i18n="home.feature4_desc">以客户需求为中心，提供个性化解决方案</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 愿景与计划部分 -->
+        <section class="vision-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="vision.title">愿景与计划</h2>
+                <div class="vision-flex">
+                    <div class="vision-image-wrapper">
+                        <img class="vision-image" src="../picture/about2.jpg" alt="愿景图片" />
+                    </div>
+                    <div class="vision-text-block">
+                        <div class="vision-subtitle" data-i18n="vision.subtitle">引领行业创新，成就美好未来</div>
+                        <p class="vision-desc" data-i18n="vision.desc">
+                            我们致力于成为行业领先的创新型企业，不断推动制鞋工艺与自动化技术的进步。未来，公司将持续加大研发投入，拓展国际市场，提升品牌影响力，并积极践行可持续发展战略，为客户、员工和社会创造更大价值。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <script src="../Public JS/siteIndex.js"></script>
     <script src="../Public JS/language.js"></script>
@@ -52,7 +182,7 @@
                 <ul>
                     <li><a href="../Homepage/Homepage.html" data-i18n="nav.home">首页</a></li>
                     <li><a href="../Product/Product.html" data-i18n="nav.products">产品</a></li>
-                    <li><a href="../AboutUs/AboutUs.html" data-i18n="nav.about">关于我们</a></li>
+                    <li><a href="../AboutUs/AboutUS.html" data-i18n="nav.about">关于我们</a></li>
                     <li><a href="../ContactUS/ContactUS.html" data-i18n="nav.contact">联系我们</a></li>
                 </ul>
             </div>

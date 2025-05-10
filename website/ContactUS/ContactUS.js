@@ -1,6 +1,9 @@
 // ContactUS页面特定的JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
+    // 设置当前页面导航链接高亮
+    setActiveNavLink();
+    
     // 监听语言变更事件
     document.addEventListener('languageChanged', function(e) {
         const lang = e.detail.language;
@@ -24,6 +27,43 @@ document.addEventListener('DOMContentLoaded', function() {
         adjustChineseLayout();
     }
 });
+
+// 设置当前页面导航链接高亮
+function setActiveNavLink() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        // 移除所有active类
+        link.classList.remove('active');
+        
+        // 获取链接路径
+        const linkPath = link.getAttribute('href');
+        
+        // 检查当前页面路径
+        if (currentPath.includes('Homepage') || currentPath === '/' || currentPath.endsWith('/')) {
+            // 首页情况
+            if (linkPath.includes('Homepage.html')) {
+                link.classList.add('active');
+            }
+        } else if (currentPath.includes('Product')) {
+            // 产品页面
+            if (linkPath.includes('Product.html')) {
+                link.classList.add('active');
+            }
+        } else if (currentPath.includes('AboutUs')) {
+            // 关于我们页面
+            if (linkPath.includes('AboutUS.html')) {
+                link.classList.add('active');
+            }
+        } else if (currentPath.includes('ContactUS')) {
+            // 联系我们页面
+            if (linkPath.includes('ContactUS.html')) {
+                link.classList.add('active');
+            }
+        }
+    });
+}
 
 // 英文布局调整函数
 function adjustEnglishLayout() {
