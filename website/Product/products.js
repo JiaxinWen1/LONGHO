@@ -6,15 +6,14 @@ const productsData = [
         name: "产品1.1",
         category: "type1",
         image: "../picture/type1/011-1 1.jpg",
-        description: "这是产品1.1的描述信息",
-        details: "这里是产品1.1的详细信息",
+        // description: "这是产品1.1的描述信息",
+        // details: "这里是产品1.1的详细信息",
         features: [
             "11111111111111",
             "22222222222222",
             "33333333333333",
             "44444444444444",
             "55555555555555",
-
         ],
         colors: [
             {

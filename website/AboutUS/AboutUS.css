@@ -194,6 +194,8 @@ html, body {
     cursor: pointer;
     font-size: 14px;
     transition: all 0.3s ease;
+    min-width: 60px;
+    text-align: center;
 }
 
 .lang-btn:hover {
@@ -1110,13 +1112,36 @@ html, body {
     font-size: 16px;
     font-weight: 500;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.item-name span {
-    font-size: 12px;
+.item-name-cn {
     display: block;
+    font-weight: bold;
+}
+
+.item-name-en {
+    display: block;
+    font-size: 12px;
     margin-top: 2px;
     opacity: 0.85;
+}
+
+/* 当前语言为英文时的样式调整 */
+body.lang-en .item-name-cn {
+    display: none;
+}
+
+body.lang-zh .item-name-en {
+    opacity: 0.8;
+}
+
+/* 当前语言为英文时反转显示顺序 */
+body.lang-en .item-name {
+    flex-direction: column-reverse;
 }
 
 .item-details {
@@ -1150,17 +1175,7 @@ html, body {
     color: #333;
 }
 
-.item-count::before {
-    content: '数量';
-    display: block;
-    font-size: 13px;
-    font-weight: normal;
-    color: #777;
-    margin-bottom: 5px;
-}
-
-.item-capacity::before {
-    content: '月产量';
+.label {
     display: block;
     font-size: 13px;
     font-weight: normal;

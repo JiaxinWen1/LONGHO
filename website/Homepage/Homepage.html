@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>homepage</title>
     <link rel="stylesheet" href="./Homepage.css">
+    <style>
+        body {
+            min-width: 1200px; /* 最小宽度与设计稿宽度一致 */
+            overflow-x: auto;
+            margin: 0 auto;
+        }
+        html, body {
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -28,8 +38,8 @@
                 </button>
             </div>
             <div class="language-switch">
-                <button class="lang-btn" data-lang="zh">中文</button>
                 <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
             </div>
         </div>
     </div>
@@ -42,6 +52,22 @@
                     <div class="carousel-caption">
                         <h2 data-i18n="carousel.title1">用科技的力量做高品质的鞋</h2>
                         <p data-i18n="carousel.desc1">勤劳 务实 责任 有果 创新</p>
+                        <a href="../Product/Product.html" class="btn" data-i18n="carousel.button1">了解更多</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../picture/banner2.jpg" alt="公司展示图2" class="carousel-image">
+                    <div class="carousel-caption">
+                        <h2 data-i18n="carousel.title2">创新技术，引领未来</h2>
+                        <p data-i18n="carousel.desc2">专注于为客户提供优质解决方案</p>
+                        <a href="../Product/Product.html" class="btn" data-i18n="carousel.button1">了解更多</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../picture/banner3.jpg" alt="公司展示图3" class="carousel-image">
+                    <div class="carousel-caption">
+                        <h2 data-i18n="carousel.title3">全球视野，本地服务</h2>
+                        <p data-i18n="carousel.desc3">我们的产品遍布全球各地</p>
                         <a href="../Product/Product.html" class="btn" data-i18n="carousel.button1">了解更多</a>
                     </div>
                 </div>

@@ -46,9 +46,49 @@ const translations = {
         'product.title': '产品',
         'product.item1': '产品1',
         'product.name': 'Type1',
+        
         // 关于我们页面
         'about.title': '关于我们',
         'about.content': '朗浩科技有限公司是一家国家级高新技术企业。自 2012 年成立，经过十年的持续改善及创新，现已发展成为集制鞋及自动化装备研发为一体的新型制鞋企业。公司不断加强和高校的联合开发，加强新型材料和功能的运用，逐渐培养出一支具备高新技术人才的管理团队。公司拥有自主的研发设计团队，现已成长为从研发到生产销售一体的全功能性企业',
+        'about.banner.title': '关于我们',
+        'about.banner.subtitle': '用科技的力量做高品质的鞋',
+        'about.company.name': '朗浩科技有限公司',
+        'about.company.badge': '国家级高新技术企业',
+        'about.company.year': '始创于2012年',
+        'about.company.desc': '经过十年的持续改善及创新，现已发展成为集制鞋及自动化装备研发为一体的新型制鞋企业。公司不断加强和高校的联合开发，强化新型材料和功能的运用，逐渐培养出一支具备高新技术人才的管理团队。公司拥有自主的研发设计团队，现已成长为从研发到生产销售一体的全功能性企业。',
+        'about.subsidiary.name': '鼎盟创新有限公司',
+        'about.subsidiary.badge': '柬埔寨子公司',
+        'about.subsidiary.year': '成立于2024年',
+        'about.subsidiary.desc': '专注于安全鞋和运动鞋的生产制造，凭借精湛的工艺和对品质的执着追求，打造出一系列符合市场需求和高质量标准的产品。多年来始终秉持创新理念，积极适应市场变化，在激烈的市场竞争中不断发展壮大，逐步在鞋类行业树立了良好的品牌形象，赢得了全球消费者的广泛认可和信赖。',
+        'about.certification.title': '认证资质',
+        'about.certification.note': '拥有数十项专利，大部分专利成功转化为生产力，并获得科学技术奖项。',
+        'about.team.title': '人员配备',
+        'about.team.longho': '朗浩科技',
+        'about.team.topalliance': '鼎盟创新',
+        'about.team.employees': '员工人数',
+        'about.team.desc': '加强与高校的合作，利用新材料新功能，逐步建立起一支高素质的高效管理队伍。',
+        'about.capacity.title': '各部门产能',
+        'about.capacity.cambodia': '(柬埔寨)',
+        'about.capacity.china': '(中国)',
+        'about.capacity.stitching': '针车线',
+        'about.capacity.goodyear': '固特异产线',
+        'about.capacity.cement': '冷粘产线',
+        'about.capacity.outsole': '大底组装线',
+        'about.capacity.desma': '德士马射出线',
+        'about.capacity.injection': '普通注塑线',
+        'about.capacity.embroidery': '电绣车间',
+        'about.capacity.count': '数量',
+        'about.capacity.monthly': '月产量',
+        'about.design.title': '设计研发中心',
+        'about.design.desc': '设计研发是企业创新的核心力量。这里汇聚了经验丰富的鞋类设计师、工艺专家等专业人才，他们凭借敏锐行业触觉和精湛技艺，深入调研市场潮流，精心构思、反复打磨每一款鞋样，确保样品兼具美观与功能性，为后续大规模生产提供高品质参照，有力推动鞋厂新品不断推陈出新，在激烈市场竞争中始终保持优势。',
+        'about.lab.title': '实验测试中心',
+        'about.lab.desc': '朗浩与鼎盟都是SATRA的成员之一，拥有二十多台专业的材料和成品试验机（拉伸/磨边/弯曲/压缩/防水捻丝机等），并有经验丰富的测试人员对公司产品进行相关测试。',
+        'about.gallery.title': '公司照片',
+        'gallery.all': '全部',
+        'gallery.workshop': '车间',
+        'gallery.lab': '实验室',
+        'gallery.yard': '园区',
+        'gallery.playpause': '暂停/播放',
         
         // 联系我们页面
         'contact.title': '联系我们',
@@ -146,6 +186,45 @@ const translations = {
         // About Us page
         'about.title': 'About Us',
         'about.content': 'LONGHO Company is dedicated to the research, development and production of intelligent devices, committed to providing high-quality products and excellent service to our customers.',
+        'about.banner.title': 'About Us',
+        'about.banner.subtitle': 'Producing high-quality shoes with today\'s technology',
+        'about.company.name': 'LONGHO Technology Co., Ltd.',
+        'about.company.badge': 'National High-Tech Enterprise',
+        'about.company.year': 'Founded in 2012',
+        'about.company.desc': 'After a decade of continuous improvement and innovation, it has now developed into a new type of footwear enterprise integrating footwear and automated equipment R&D. The company continues to strengthen joint development with universities, strengthen the application of new materials and functions, and gradually cultivate a management team with high-tech talents. The company has its own R&D and design team and has grown into a fully functional enterprise integrating R&D, production, and sales.',
+        'about.subsidiary.name': 'Top Alliance Innovation Co., Ltd.',
+        'about.subsidiary.badge': 'Cambodia Subsidiary',
+        'about.subsidiary.year': 'Established in 2024',
+        'about.subsidiary.desc': 'Focusing on the production of safety shoes and sports shoes, with exquisite craftsmanship and a relentless pursuit of quality, we create a series of products that meet market demands and high-quality standards. Over the years, we have always adhered to the concept of innovation, actively adapted to market changes, continued to grow in fierce market competition, and gradually established a good brand image in the footwear industry, winning widespread recognition and trust from global consumers.',
+        'about.certification.title': 'Certifications',
+        'about.certification.note': 'Owns dozens of patents, most of which have been successfully transformed into productivity, and has received awards for scientific and technological achievements.',
+        'about.team.title': 'Personnel',
+        'about.team.longho': 'LONGHO Technology',
+        'about.team.topalliance': 'Top Alliance',
+        'about.team.employees': 'Employees',
+        'about.team.desc': 'Strengthening cooperation with universities, utilizing new materials and functions, and gradually building a high-quality and efficient management team.',
+        'about.capacity.title': 'Department Capacity',
+        'about.capacity.cambodia': '(Cambodia)',
+        'about.capacity.china': '(China)',
+        'about.capacity.stitching': 'Stitching Line',
+        'about.capacity.goodyear': 'GoodYear Welt',
+        'about.capacity.cement': 'Cement Line',
+        'about.capacity.outsole': 'Outsole Assembly',
+        'about.capacity.desma': 'Desma Injection',
+        'about.capacity.injection': 'Regular Injection',
+        'about.capacity.embroidery': 'Embroidery Workshop',
+        'about.capacity.count': 'Quantity',
+        'about.capacity.monthly': 'Monthly Output',
+        'about.design.title': 'Design R&D Center',
+        'about.design.desc': 'Design and R&D is the core force of enterprise innovation. Here, experienced shoe designers, process experts and other professionals gather, who, with keen industry touch and exquisite skills, research market trends, carefully conceive and repeatedly polish each shoe sample to ensure that samples are both beautiful and functional, providing high-quality references for subsequent mass production, strongly promoting the continuous innovation of new products in the shoe factory, and maintaining an advantage in fierce market competition.',
+        'about.lab.title': 'Laboratory Testing Center',
+        'about.lab.desc': 'Both LONGHO and Top Alliance are members of SATRA, with more than 20 professional material and finished product testing machines (tension/edge grinding/bending/compression/waterproof twisting machine, etc.), and experienced testing personnel to test the company\'s products.',
+        'about.gallery.title': 'Company Photos',
+        'gallery.all': 'All',
+        'gallery.workshop': 'Workshop',
+        'gallery.lab': 'Laboratory',
+        'gallery.yard': 'Campus',
+        'gallery.playpause': 'Pause/Play',
         
         // Contact Us page
         'contact.title': 'Contact Us',
@@ -194,8 +273,8 @@ const translations = {
     }
 };
 
-// 获取用户之前选择的语言，如果没有则默认为中文
-let currentLang = localStorage.getItem('language') || 'zh';
+// 获取用户之前选择的语言，如果没有则默认为英文
+let currentLang = localStorage.getItem('language') || 'en';
 
 // 设置语言函数
 function setLanguage(lang) {
@@ -218,6 +297,20 @@ function setLanguage(lang) {
         const key = element.getAttribute('data-i18n');
         if (translations[lang][key]) {
             element.textContent = translations[lang][key];
+        }
+    });
+
+    // 更新所有带有 data-i18n-before 属性的元素
+    document.querySelectorAll('[data-i18n-before]').forEach(element => {
+        const key = element.getAttribute('data-i18n-before');
+        // 检查元素是否已有保存的原始内容，否则保存当前内容
+        if (!element.hasAttribute('data-original-content')) {
+            element.setAttribute('data-original-content', element.innerText);
+        }
+        const originalContent = element.getAttribute('data-original-content');
+        
+        if (translations[lang][key]) {
+            element.innerHTML = `<span class="label">${translations[lang][key]}</span>${originalContent}`;
         }
     });
 

@@ -119,6 +119,8 @@
     cursor: pointer;
     font-size: 14px;
     transition: all 0.3s ease;
+    min-width: 60px;
+    text-align: center;
 }
 
 .lang-btn:hover {
@@ -146,148 +148,125 @@ body {
 }
 
 .search-results-container {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .search-header {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 .search-header h2 {
-    margin: 0 0 10px 0;
+    margin: 0;
     color: #333;
     font-size: 24px;
-    font-weight: 500;
 }
 
-.search-header p {
-    margin: 0;
+#search-term {
+    margin-top: 5px;
     color: #666;
     font-size: 16px;
 }
 
-.search-results {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.search-result-item {
-    background: #f8f9fa;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-}
-
-.search-result-item:hover {
-    background-color: #f0f0f0;
-}
-
-.search-result-item h3 {
-    margin: 0 0 8px 0;
-    color: #333;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.search-result-item p {
-    margin: 0;
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.search-result-item .highlight {
-    background-color: #ffeb3b;
-    color: #000;
-    font-weight: 500;
-    padding: 0 2px;
-    border-radius: 2px;
-}
-
-.search-contexts {
-    margin-top: 10px;
-    padding-left: 10px;
-    border-left: 3px solid #f0f0f0;
-}
-
-.context-item {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 8px;
-    line-height: 1.4;
-    font-style: italic;
-}
-
-.content-match {
-    margin-top: 8px;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 4px;
-    font-size: 13px;
-    color: #555;
-    line-height: 1.4;
-    border-left: 3px solid #ddd;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    text-overflow: ellipsis;
-    max-height: 120px;
-    overflow: hidden;
-}
-
-.content-match::before {
-    content: attr(data-label);
-    display: block;
-    font-size: 11px;
-    color: #888;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
 .search-loading {
-    text-align: center;
     padding: 20px;
+    text-align: center;
     color: #666;
-    font-style: italic;
 }
 
 .search-error {
-    text-align: center;
     padding: 20px;
-    color: #d32f2f;
-    background-color: #ffebee;
-    border-radius: 4px;
-    margin-top: 10px;
+    text-align: center;
+    color: #e74c3c;
 }
 
-.search-result-item a {
+.no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.no-results ul {
+    list-style-type: disc;
+    text-align: left;
+    max-width: 400px;
+    margin: 15px auto;
+}
+
+.no-results li {
+    margin-bottom: 8px;
+}
+
+.result-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item h3 {
+    margin: 0 0 5px 0;
+}
+
+.result-item h3 a {
+    color: #2980b9;
     text-decoration: none;
-    color: inherit;
-    display: block;
-    padding: 15px;
+    font-size: 20px;
 }
 
-/* 响应式设计 */
+.result-item h3 a:hover {
+    text-decoration: underline;
+}
+
+.result-url {
+    color: #27ae60;
+    margin: 0 0 8px 0;
+    font-size: 14px;
+}
+
+.result-description {
+    margin: 10px 0;
+    color: #333;
+    line-height: 1.5;
+}
+
+.result-match {
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    border-left: 3px solid #3498db;
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.highlight {
+    background-color: #ffffcc;
+    padding: 2px 0;
+    font-weight: bold;
+}
+
+/* 响应式调整 */
 @media (max-width: 768px) {
-    .content {
-        padding: 20px 10px;
-    }
-
     .search-results-container {
-        padding: 20px;
+        margin: 20px 10px;
+        padding: 15px;
     }
-
-    .search-header h2 {
-        font-size: 20px;
+    
+    .result-item h3 a {
+        font-size: 18px;
     }
-
-    .search-header p {
+    
+    .result-description {
         font-size: 14px;
     }
 } 
