@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="search.page_title">搜索结果</title>
+    <link rel="stylesheet" href="./assets/css/SearchResults.css">
+    <link rel="stylesheet" href="./assets/css/language.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-background"></div>
+        <div class="header-content">
+            <img src="./picture/LOGO.png" alt="logo" class="logo">
+            <h1>LONGHO</h1>
+            <div class="nav">
+                <a href="./index.html" class="nav-link" data-i18n="nav.home">首页</a>
+                <a href="./Product.html" class="nav-link" data-i18n="nav.products">产品</a>
+                <a href="./AboutUS.html" class="nav-link" data-i18n="nav.about">关于我们</a>
+                <a href="./ContactUS.html" class="nav-link" data-i18n="nav.contact">联系我们</a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="搜索..." data-i18n-placeholder="search.placeholder">
+                <button class="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="language-switch">
+                <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="search-results-container">
+            <div class="search-header">
+                <h2 id="search-title" data-i18n="search.results">搜索结果</h2>
+                <p id="search-term"></p>
+            </div>
+            <div id="search-results" class="search-results">
+                <!-- 搜索结果将在这里动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/siteIndex.js"></script>
+    <script src="./assets/js/language.js"></script>
+    <script src="./assets/js/search.js"></script>
+    <script src="./assets/js/SearchResults.js"></script>
+</body>
+</html> 
