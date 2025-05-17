@@ -58,11 +58,20 @@ function initCategories() {
     allCategoryItem.textContent = '全部';
     categoryList.appendChild(allCategoryItem);
     
+    // 分类名称映射
+    const categoryMapping = {
+        'type1': '登山鞋',
+        'type2': '西部牛仔靴',
+        'type3': '固特异工作鞋'
+    };
+    
     // 添加所有产品分类
     categories.forEach(category => {
         const categoryItem = document.createElement('li');
         categoryItem.className = 'category-item';
-        categoryItem.textContent = category;
+        // 使用映射显示中文名称，但保留原始分类值作为数据属性
+        categoryItem.textContent = categoryMapping[category] || category;
+        categoryItem.setAttribute('data-category', category);
         categoryList.appendChild(categoryItem);
     });
     
@@ -76,9 +85,10 @@ function initCategories() {
             // 添加当前点击项的激活状态
             this.classList.add('active');
             
-            // 获取分类名称
-            const category = this.textContent;
-            console.log(`选择分类: ${category}`);
+            // 获取分类名称 - 如果是全部，直接使用文本内容，否则使用保存的原始分类值
+            const categoryText = this.textContent;
+            const category = categoryText === '全部' ? categoryText : this.getAttribute('data-category');
+            console.log(`选择分类: ${categoryText}`);
             
             // 筛选产品
             filterProductsByCategory(category);
@@ -110,7 +120,8 @@ function renderProducts(products) {
                 </div>
                 <div class="product-info">
                     <h3 class="product-name">${product.name}</h3>
-                    <p class="product-description">${product.description}</p>
+                    <!-- 暂时隐藏产品描述 -->
+                    <!-- <p class="product-description">${product.description || ''}</p> -->
                 </div>
             </a>
         `;

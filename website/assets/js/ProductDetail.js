@@ -32,6 +32,16 @@ function loadProductData() {
 
 // 显示产品数据
 function displayProductData(product) {
+    // 分类名称映射
+    const categoryMapping = {
+        'type1': '登山鞋',
+        'type2': '西部牛仔靴',
+        'type3': '固特异工作鞋'
+    };
+    
+    // 获取分类的显示名称
+    const categoryDisplayName = categoryMapping[product.category] || product.category;
+    
     // 更新页面标题
     document.title = `${product.name} - 产品详情`;
     
@@ -40,9 +50,12 @@ function displayProductData(product) {
     
     // 更新产品信息
     document.querySelector('.product-title').textContent = product.name;
-    document.querySelector('.product-subtitle').textContent = product.category;
-    document.getElementById('product-description-text').textContent = product.details;
-    document.getElementById('style-code').textContent = `款式：${product.category}`;
+    document.querySelector('.product-subtitle').textContent = categoryDisplayName;
+    
+    // 注释掉产品描述文本，暂时不显示
+    // document.getElementById('product-description-text').textContent = product.details;
+    
+    document.getElementById('style-code').textContent = `款式：${categoryDisplayName}`;
     
     // 更新主图
     const mainImage = document.getElementById('main-image');

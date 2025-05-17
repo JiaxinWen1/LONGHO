@@ -27,8 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // 获取当前语言的网站索引
         const sitePages = getSiteIndex();
         
-        // 开始全文搜索
-        fullTextSearch(sitePages, searchTermLower)
+        // 如果页面索引不包含完整内容，尝试动态抓取页面内容
+        fetchPagesContent(sitePages, searchTermLower)
+            .then(enrichedPages => {
+                // 开始全文搜索
+                return fullTextSearch(enrichedPages, searchTermLower);
+            })
             .then(results => {
                 // 显示搜索结果
                 showSearchResults(results);
@@ -39,16 +43,131 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
+    // 动态抓取页面内容
+    async function fetchPagesContent(pages, searchTerm) {
+        // 创建页面副本以避免修改原始数据
+        const enrichedPages = JSON.parse(JSON.stringify(pages));
+        const fetchPromises = [];
+
+        // 对于每个页面，尝试抓取更多内容
+        for (let i = 0; i < enrichedPages.length; i++) {
+            const page = enrichedPages[i];
+            
+            // 如果内容不够丰富或不存在，尝试获取完整内容
+            if (!page.fullContentFetched && page.url) {
+                // 修正URL以确保可以正确获取页面
+                let fetchUrl = page.url;
+                if (fetchUrl.includes('/')) {
+                    const urlParts = fetchUrl.split('/');
+                    fetchUrl = './' + urlParts[urlParts.length - 1];
+                } else if (!fetchUrl.startsWith('./') && !fetchUrl.startsWith('../') && !fetchUrl.startsWith('http')) {
+                    fetchUrl = './' + fetchUrl;
+                }
+                
+                // 创建抓取页面内容的Promise
+                const fetchPromise = fetch(fetchUrl)
+                    .then(response => {
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                        return response.text();
+                    })
+                    .then(html => {
+                        // 使用DOMParser解析HTML
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        
+                        // 抓取页面中的所有文本内容
+                        const textContent = extractAllTextContent(doc);
+                        
+                        // 提取所有标题文本
+                        const headings = extractAllHeadings(doc);
+                        
+                        // 提取所有段落文本
+                        const paragraphs = extractAllParagraphs(doc);
+                        
+                        // 合并所有内容
+                        enrichedPages[i].content = [
+                            enrichedPages[i].content || '',
+                            textContent,
+                            headings.join(' '),
+                            paragraphs.join(' ')
+                        ].join(' ').trim();
+                        
+                        // 标记为已抓取完整内容
+                        enrichedPages[i].fullContentFetched = true;
+                        
+                        return true;
+                    })
+                    .catch(error => {
+                        console.warn(`无法获取页面内容: ${fetchUrl}`, error);
+                        return false;
+                    });
+                
+                fetchPromises.push(fetchPromise);
+            }
+        }
+        
+        // 等待所有抓取任务完成
+        if (fetchPromises.length > 0) {
+            await Promise.allSettled(fetchPromises);
+        }
+        
+        return enrichedPages;
+    }
+
+    // 提取页面中的所有文本内容
+    function extractAllTextContent(doc) {
+        // 获取body中的所有文本，并去除脚本和样式标签
+        const body = doc.body;
+        if (!body) return '';
+        
+        // 克隆节点，避免修改原始DOM
+        const clonedBody = body.cloneNode(true);
+        
+        // 移除所有脚本和样式标签
+        const scripts = clonedBody.querySelectorAll('script, style, noscript');
+        scripts.forEach(script => script.remove());
+        
+        // 获取文本内容
+        return clonedBody.textContent.replace(/\s+/g, ' ').trim();
+    }
+
+    // 提取所有标题元素
+    function extractAllHeadings(doc) {
+        const headings = [];
+        const headingElements = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        
+        headingElements.forEach(heading => {
+            const text = heading.textContent.trim();
+            if (text) headings.push(text);
+        });
+        
+        return headings;
+    }
+
+    // 提取所有段落元素
+    function extractAllParagraphs(doc) {
+        const paragraphs = [];
+        const paragraphElements = doc.querySelectorAll('p');
+        
+        paragraphElements.forEach(paragraph => {
+            const text = paragraph.textContent.trim();
+            if (text) paragraphs.push(text);
+        });
+        
+        return paragraphs;
+    }
+
     // 全文搜索
     async function fullTextSearch(pages, searchTerm) {
         // 创建一个结果Map，用URL作为键以防止重复
         const resultsMap = new Map();
-        const searchPromises = [];
         const searchTermTokens = searchTerm.split(/\s+/).filter(token => token.length > 1);
+        const currentLang = localStorage.getItem('language') || 'zh';
 
         // 遍历所有页面
         pages.forEach(page => {
             let score = 0;
+            let contentMatches = [];
             
             // 1. 先搜索标题
             if (page.title.toLowerCase().includes(searchTerm)) {
@@ -88,70 +207,74 @@ document.addEventListener('DOMContentLoaded', () => {
             // 4. 搜索内容
             if (page.content) {
                 const contentLower = page.content.toLowerCase();
+                
+                // 完全匹配
                 if (contentLower.includes(searchTerm)) {
                     score += 15; // 内容中完全匹配
                     
-                    // 提取匹配上下文
-                    const index = contentLower.indexOf(searchTerm);
-                    const start = Math.max(0, index - 30);
-                    const end = Math.min(contentLower.length, index + searchTerm.length + 30);
-                    let contentMatch = page.content.substring(start, end);
+                    // 提取匹配上下文（可能有多个）
+                    let lastIndex = 0;
+                    let count = 0;
+                    const maxMatches = 3; // 最多显示几个匹配
                     
-                    // 添加匹配结果
-                    if (score > 0) {
-                        resultsMap.set(page.url, {
-                            url: page.url,
-                            title: page.title,
-                            description: page.description,
-                            score: score,
-                            contentMatch: `...${contentMatch}...`
-                        });
-                    }
-                } else {
-                    let containsPartial = false;
-                    searchTermTokens.forEach(token => {
-                        if (contentLower.includes(token)) {
-                            score += 5; // 内容中部分匹配
-                            containsPartial = true;
-                        }
-                    });
-                    
-                    if (containsPartial) {
-                        // 使用第一个匹配的token作为上下文提取点
-                        let matchToken = null;
-                        for (const token of searchTermTokens) {
-                            if (contentLower.includes(token)) {
-                                matchToken = token;
-                                break;
-                            }
-                        }
+                    while ((lastIndex = contentLower.indexOf(searchTerm, lastIndex)) !== -1 && count < maxMatches) {
+                        const start = Math.max(0, lastIndex - 40);
+                        const end = Math.min(contentLower.length, lastIndex + searchTerm.length + 40);
+                        const match = page.content.substring(start, end);
+                        contentMatches.push(`...${match}...`);
                         
-                        if (matchToken) {
-                            const index = contentLower.indexOf(matchToken);
-                            const start = Math.max(0, index - 30);
-                            const end = Math.min(contentLower.length, index + matchToken.length + 30);
-                            let contentMatch = page.content.substring(start, end);
-                            
-                            // 添加匹配结果
-                            resultsMap.set(page.url, {
-                                url: page.url,
-                                title: page.title,
-                                description: page.description,
-                                score: score,
-                                contentMatch: `...${contentMatch}...`
-                            });
-                        }
+                        lastIndex += searchTerm.length;
+                        count++;
                     }
                 }
+                
+                // 部分匹配
+                let partialMatchScore = 0;
+                searchTermTokens.forEach(token => {
+                    if (contentLower.includes(token)) {
+                        partialMatchScore += 5; // 内容中部分匹配
+                        
+                        // 对较长的词给予更高权重
+                        if (token.length > 3) {
+                            partialMatchScore += 2;
+                        }
+                        
+                        // 如果匹配次数较多也增加分数
+                        const tokenRegex = new RegExp(escapeRegExp(token), 'gi');
+                        const matchCount = (contentLower.match(tokenRegex) || []).length;
+                        if (matchCount > 1) {
+                            partialMatchScore += Math.min(5, matchCount); // 最多加5分
+                        }
+                        
+                        // 如果还没有提取到上下文，提取部分匹配的上下文
+                        if (contentMatches.length < 3) {
+                            let tokenLastIndex = 0;
+                            let count = 0;
+                            
+                            while ((tokenLastIndex = contentLower.indexOf(token, tokenLastIndex)) !== -1 && count < 2) {
+                                const start = Math.max(0, tokenLastIndex - 40);
+                                const end = Math.min(contentLower.length, tokenLastIndex + token.length + 40);
+                                const match = page.content.substring(start, end);
+                                contentMatches.push(`...${match}...`);
+                                
+                                tokenLastIndex += token.length;
+                                count++;
+                            }
+                        }
+                    }
+                });
+                
+                score += partialMatchScore;
             }
             
-            // 如果没有在内容中找到匹配，但在其他地方找到了
-            if (score > 0 && !resultsMap.has(page.url)) {
+            // 如果有任何匹配，添加到结果中
+            if (score > 0) {
                 resultsMap.set(page.url, {
                     url: page.url,
                     title: page.title,
                     description: page.description,
-                    score: score
+                    score: score,
+                    contentMatches: contentMatches
                 });
             }
         });
@@ -194,13 +317,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const urlParts = result.url.split('/');
             const displayUrl = urlParts.slice(-2).join('/');
             
+            // 修正目标URL，确保它指向根目录下的文件
+            let targetUrl = result.url;
+            if (targetUrl.includes('/')) { // 如果路径包含子目录
+                targetUrl = './' + urlParts[urlParts.length - 1]; // 改为根目录相对路径，例如 ./ContactUS.html
+            } else if (!targetUrl.startsWith('./') && !targetUrl.startsWith('../') && !targetUrl.startsWith('http')) {
+                // 如果它只是一个文件名且不是绝对或外部链接，确保它是相对于根目录的
+                targetUrl = './' + targetUrl;
+            }
+            
+            // 构建匹配内容HTML
+            let contentMatchHTML = '';
+            if (result.contentMatches && result.contentMatches.length > 0) {
+                contentMatchHTML = result.contentMatches.map(match => 
+                    `<p class="result-match">${highlightSearchTerms(match, searchInput.value)}</p>`
+                ).join('');
+            }
+            
             // 创建结果项
             resultsHTML += `
                 <div class="result-item">
-                    <h3><a href="${result.url}">${result.title}</a></h3>
+                    <h3><a href="${targetUrl}">${result.title}</a></h3>
                     <p class="result-url">${displayUrl}</p>
                     <p class="result-description">${result.description}</p>
-                    ${result.contentMatch ? `<p class="result-match">${highlightSearchTerms(result.contentMatch, searchInput.value)}</p>` : ''}
+                    ${contentMatchHTML}
                 </div>
             `;
         });
@@ -239,17 +379,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 添加搜索事件监听
     searchButton.addEventListener('click', () => {
-        const query = searchInput.value.trim();
-        if (query) {
-            window.location.href = `SearchResults.html?q=${encodeURIComponent(query)}`;
+        const newQuery = searchInput.value.trim();
+        if (newQuery) {
+            // 更新URL并执行搜索
+            const url = new URL(window.location.href);
+            url.searchParams.set('q', newQuery);
+            window.history.pushState({}, '', url);
+            performSearch(newQuery);
         }
     });
 
     searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-            const query = searchInput.value.trim();
-            if (query) {
-                window.location.href = `SearchResults.html?q=${encodeURIComponent(query)}`;
+            const newQuery = searchInput.value.trim();
+            if (newQuery) {
+                // 更新URL并执行搜索
+                const url = new URL(window.location.href);
+                url.searchParams.set('q', newQuery);
+                window.history.pushState({}, '', url);
+                performSearch(newQuery);
             }
         }
     });

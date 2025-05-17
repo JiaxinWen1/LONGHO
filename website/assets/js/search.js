@@ -21,7 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (query) {
             // 将搜索词存储到本地存储中，用于搜索结果页面
             localStorage.setItem('lastSearchQuery', query);
-            window.location.href = `../SearchResults/SearchResults.html?q=${encodeURIComponent(query)}`;
+            // 构建搜索结果页面的URL，并传递搜索查询
+            // 确保 searchResultPage 变量已在全局或此作用域中定义，并指向正确的搜索结果页面路径
+            // 例如: const searchResultPage = '../SearchResults.html'; 
+            window.location.href = `../SearchResults.html?q=${encodeURIComponent(query)}`;
+        } else {
+            // 如果搜索查询为空，可以选择给出提示或不执行任何操作
         }
     }
 
