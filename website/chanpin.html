@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品类型 - LONGHO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 头部样式 */
+        .header {
+            position: relative;
+            width: 100%;
+            height: 60px;
+            padding: 0;
+            margin: 0;
+            z-index: 10;
+        }
+
+        .header::before {
+            content: none;
+        }
+
+        .header-background {
+            display: none;
+        }
+
+        /* 页眉内容 */
+        .header-content {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 32px;
+            background-color: rgba(0, 0, 0, 0.651); /* 半透明背景 */
+            z-index: 2;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .header h1 {
+            color: #fff;
+            margin: 0 32px 0 0;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .header .nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-link {
+            color: #fff;
+            margin: 0;
+            font-weight: normal;
+            cursor: pointer;
+            font-size: 1.17em;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            transform: scale(1.1);
+        }
+
+        /* 当前页面的导航项样式 */
+        .nav-link.active {
+            color: #e88f41;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #e88f41;
+        }
+
+        /* 搜索框样式 */
+        .search-container {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            background-color: rgba(59, 59, 59, 0.5);
+            border-radius: 20px;
+            padding: 5px 10px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 5px;
+            width: 150px;
+            font-size: 14px;
+        }
+
+        .search-input::placeholder {
+            color: #aaa;
+        }
+
+        .search-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        .search-button:hover {
+            color: #f0f0f0;
+        }
+
+        /* 语言切换 */
+        .language-switch {
+            margin-left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-btn.active {
+            background: #e88f41;
+            color: #fff;
+            border-color: #e88f41;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .page-title h1 {
+            font-size: 2.2rem;
+            color: #1a2a3a;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #e88f41;
+        }
+        
+        .categories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .category-icon {
+            background-color: #f5f5f5;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .category-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+            display: block;
+        }
+        
+        .category-icon::after {
+            content: "加载中...";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+            color: #666;
+            font-size: 14px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .category-icon.loading::after {
+            opacity: 1;
+        }
+        
+        .category-card:hover .category-icon img {
+            transform: scale(1.05);
+        }
+        
+        .category-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #1a2a3a;
+        }
+        
+        .category-desc {
+            display: none;
+        }
+        
+        .category-features {
+            display: none;
+        }
+        
+        .view-more {
+            display: inline-block;
+            background-color: #e88f41;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        
+        .view-more:hover {
+            background-color: #e67e22;
+        }
+        
+        .custom-option-icon {
+            font-size: 2.5rem;
+            color: #1a2a3a;
+            margin-bottom: 1rem;
+            background-color: #e88f41;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .product-process {
+            margin-top: 4rem;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('./picture/workshop2/chejian.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .process-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1a2a3a;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .process-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #e88f41;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 0 2rem;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-number {
+            background-color: #e88f41;
+            color: #1a2a3a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #1a2a3a;
+        }
+        
+        .step-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .custom-options {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        .options-title {
+            margin-bottom: 1.5rem;
+            color: #1a2a3a;
+        }
+        
+        .contact-section {
+            background-color: #1a2a3a;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+            background-image: linear-gradient(rgba(26, 42, 58, 0.85), rgba(26, 42, 58, 0.85)), url('./picture/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .contact-title {
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+        
+        .contact-text {
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background-color: #e88f41;
+            color: #1a2a3a;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-button:hover {
+            background-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: #ddd;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .logo {
+                margin-right: 8px;
+            }
+            
+            .header h1 {
+                margin: 0 15px 0 0;
+                font-size: 1.5rem;
+            }
+            
+            .nav {
+                margin-left: auto;
+            }
+            
+            .nav-link {
+                font-size: 0.9em;
+            }
+            
+            .search-container {
+                margin: 0;
+                margin-right: 10px;
+            }
+            
+            .language-switch {
+                margin-left: 10px;
+            }
+            
+            .lang-btn {
+                padding: 4px 8px;
+                font-size: 12px;
+                min-width: 40px;
+            }
+            
+            .main-container {
+                padding: 0 1rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-background"></div>
+        <div class="header-content">
+            <img src="./picture/LOGO.png" alt="logo" class="logo">
+            <h1>LONGHO</h1>
+            <div class="nav">
+                <a href="./index.html" class="nav-link" data-i18n="nav.home">首页</a>
+                <a href="./Product.html" class="nav-link" data-i18n="nav.products">产品</a>
+                <a href="./chanpin.html" class="nav-link active" data-i18n="nav.products_type">产品类型</a>
+                <a href="./AboutUS.html" class="nav-link" data-i18n="nav.about">关于我们</a>
+                <a href="./ContactUS.html" class="nav-link" data-i18n="nav.contact">联系我们</a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="搜索..." data-i18n-placeholder="search.placeholder">
+                <button class="search-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="language-switch">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-container">
+        <div class="page-title">
+            <h1>我们的产品类型</h1>
+        </div>
+        
+        <div class="categories-container">
+            <!-- 登山鞋产品类型 -->
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="./picture/type1/011-1_1.jpg" alt="登山鞋" onerror="this.src='./picture/product1.jpg'; this.onerror=null;">
+                </div>
+                <div class="category-info">
+                    <h2 class="category-title">登山鞋</h2>
+                    <a href="Product.html?category=type1" class="view-more">查看产品</a>
+                </div>
+            </div>
+            
+            <!-- 西部牛仔靴产品类型 -->
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="./picture/type2/012-3.2_1.JPG" alt="西部牛仔靴" onerror="this.src='./picture/product2.jpg'; this.onerror=null;">
+                </div>
+                <div class="category-info">
+                    <h2 class="category-title">西部牛仔靴</h2>
+                    <a href="Product.html?category=type2" class="view-more">查看产品</a>
+                </div>
+            </div>
+            
+            <!-- 固特异工作鞋产品类型 -->
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="./picture/type1/011-3.1_1.jpg" alt="固特异工作鞋" onerror="this.src='./picture/product3.jpg'; this.onerror=null;">
+                </div>
+                <div class="category-info">
+                    <h2 class="category-title">固特异工作鞋</h2>
+                    <a href="Product.html?category=type3" class="view-more">查看产品</a>
+                </div>
+            </div>
+            
+            <!-- 定制鞋类产品类型 -->
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="./picture/type2/012-2.6_1.JPG" alt="定制鞋类" onerror="this.src='./picture/product4.jpg'; this.onerror=null;">
+                </div>
+                <div class="category-info">
+                    <h2 class="category-title">定制鞋类</h2>
+                    <a href="ContactUS.html" class="view-more">咨询定制</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="product-process">
+            <h2 class="process-title">专业生产流程</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-name">设计开发</div>
+                    <div class="step-desc">根据市场需求和客户要求，设计开发合适的鞋款</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-name">材料采购</div>
+                    <div class="step-desc">精选优质原材料，确保每一双鞋的品质</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-name">精工制作</div>
+                    <div class="step-desc">专业工艺结合先进设备，精心制作每一双鞋</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-name">质量检验</div>
+                    <div class="step-desc">严格的质量控制标准，确保产品符合国际标准</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-name">包装发货</div>
+                    <div class="step-desc">精心包装，安全高效地将产品送达客户手中</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="custom-options">
+            <h2 class="options-title">我们提供多种定制选项</h2>
+            <div class="categories-container">
+                <div class="category-card">
+                    <div class="category-info">
+                        <div class="custom-option-icon">
+                            <span>🧵</span>
+                        </div>
+                        <h2 class="category-title">材质定制</h2>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-info">
+                        <div class="custom-option-icon">
+                            <span>⚙️</span>
+                        </div>
+                        <h2 class="category-title">功能定制</h2>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-info">
+                        <div class="custom-option-icon">
+                            <span>🏷️</span>
+                        </div>
+                        <h2 class="category-title">品牌定制</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contact-section">
+        <h2 class="contact-title">寻找专业鞋类制造合作伙伴？</h2>
+        <p class="contact-text">无论您需要批量生产还是定制开发，我们都能为您提供专业的解决方案。拥有多年的制鞋经验和先进的生产设备，我们致力于为每位客户提供高品质的产品和服务。</p>
+        <a href="ContactUS.html" class="contact-button">立即联系我们</a>
+    </div>
+    
+    <footer class="footer">
+        <p>© 2025 LONGHO 制鞋工厂 | <a href="AboutUS.html">关于我们</a> | <a href="ContactUS.html">联系我们</a></p>
+    </footer>
+
+    <script src="./assets/js/language.js"></script>
+    <script src="./assets/js/search.js"></script>
+    <script>
+        // 图片加载处理
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.category-icon img');
+            
+            images.forEach(img => {
+                // 设置加载中状态
+                img.parentElement.classList.add('loading');
+                
+                // 图片加载完成
+                img.onload = function() {
+                    img.parentElement.classList.remove('loading');
+                };
+                
+                // 图片加载失败
+                img.onerror = function() {
+                    // 尝试使用备用图片
+                    if (!this.dataset.fallback) {
+                        this.dataset.fallback = true;
+                        // 尝试使用不带空格的路径
+                        const originalSrc = this.src;
+                        // 替换所有空格为下划线
+                        this.src = originalSrc.replace(/%20/g, '_').replace(/ /g, '_');
+                    } else {
+                        // 如果备用路径也失败，使用默认图片
+                        this.src = './picture/product1.jpg';
+                    }
+                };
+            });
+        });
+    </script>
+</body>
+</html>

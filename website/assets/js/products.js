@@ -5,7 +5,7 @@ const productsData = [
         id: 1,
         name: "产品1.1",
         category: "type1",
-        image: "../../picture/type1/011-1 1.jpg",
+        image: "../../picture/type1/011-1_1.jpg",
         // description: "这是产品1.1的描述信息",
         // details: "这里是产品1.1的详细信息",
         features: [
@@ -19,45 +19,45 @@ const productsData = [
             {
                 name: "颜色1",
                 code: "color1",
-                image: "../../picture/type1/011-1 1.jpg",
+                image: "../../picture/type1/011-1_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-1 1.jpg",
-                    "../../picture/type1/011-1 2.jpg",
-                    "../../picture/type1/011-1 3.jpg",
-                    "../../picture/type1/011-1 4.jpg"
+                    "../../picture/type1/011-1_1.jpg",
+                    "../../picture/type1/011-1_2.jpg",
+                    "../../picture/type1/011-1_3.jpg",
+                    "../../picture/type1/011-1_4.jpg"
                 ]
             },
             {
                 name: "颜色2",
                 code: "color2",
-                image: "../../picture/type1/011-1.2 1 .jpg",
+                image: "../../picture/type1/011-1.2_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-1.2 1 .jpg",
-                    "../../picture/type1/011-1.2 2.jpg",
-                    "../../picture/type1/011-1.2 3.jpg",
-                    "../../picture/type1/011-1.2 4.jpg"
+                    "../../picture/type1/011-1.2_1.jpg",
+                    "../../picture/type1/011-1.2_2.jpg",
+                    "../../picture/type1/011-1.2_3.jpg",
+                    "../../picture/type1/011-1.2_4.jpg"
                 ]
             },
             {
                 name: "颜色3",
                 code: "color3",
-                image: "../../picture/type1/011-1.3 1.jpg",
+                image: "../../picture/type1/011-1.3_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-1.3 1.jpg",
-                    "../../picture/type1/011-1.3 2.jpg",
-                    "../../picture/type1/011-1.3 3.jpg",
-                    "../../picture/type1/011-1.3 4.jpg"
+                    "../../picture/type1/011-1.3_1.jpg",
+                    "../../picture/type1/011-1.3_2.jpg",
+                    "../../picture/type1/011-1.3_3.jpg",
+                    "../../picture/type1/011-1.3_4.jpg"
                 ]
             },
             {
                 name: "颜色4",
                 code: "color4",
-                image: "../../picture/type1/011-1.4 1.jpg",
+                image: "../../picture/type1/011-1.4_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-1.4 1.jpg",
-                    "../../picture/type1/011-1.4 2.jpg",
-                    "../../picture/type1/011-1.4 3.jpg",
-                    "../../picture/type1/011-1.4 4.jpg"
+                    "../../picture/type1/011-1.4_1.jpg",
+                    "../../picture/type1/011-1.4_2.jpg",
+                    "../../picture/type1/011-1.4_3.jpg",
+                    "../../picture/type1/011-1.4_4.jpg"
                 ]
             }
         ]
@@ -66,7 +66,7 @@ const productsData = [
         id: 2,
         name: "产品2.1",
         category: "type1",
-        image: "../../picture/type1/011-2.1 1.jpg",
+        image: "../../picture/type1/011-2.1_1.jpg",
         // description: "这是产品1.2的描述信息",
         // details: "这里是产品1.2的详细信息",
         features: [
@@ -81,45 +81,45 @@ const productsData = [
             {
                 name: "颜色A",
                 code: "colorA",
-                image: "../../picture/type1/011-2.1 1.jpg",
+                image: "../../picture/type1/011-2.1_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-2.1 1.jpg",
-                    "../../picture/type1/011-2.1 2.jpg",
-                    "../../picture/type1/011-2.1 3.jpg",
-                    "../../picture/type1/011-2.1 4.jpg"
+                    "../../picture/type1/011-2.1_1.jpg",
+                    "../../picture/type1/011-2.1_2.jpg",
+                    "../../picture/type1/011-2.1_3.jpg",
+                    "../../picture/type1/011-2.1_4.jpg"
                 ]
             },
             {
                 name: "颜色B",
                 code: "colorB",
-                image: "../../picture/type1/011-2.2 1.jpg",
+                image: "../../picture/type1/011-2.2_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-2.2 1.jpg",
-                    "../../picture/type1/011-2.2 2.jpg",
-                    "../../picture/type1/011-2.2 3.jpg",
-                    "../../picture/type1/011-2.2 4.jpg"
+                    "../../picture/type1/011-2.2_1.jpg",
+                    "../../picture/type1/011-2.2_2.jpg",
+                    "../../picture/type1/011-2.2_3.jpg",
+                    "../../picture/type1/011-2.2_4.jpg"
                 ]
             },
             {
                 name: "颜色C",
                 code: "colorC",
-                image: "../../picture/type1/011-2.3 1.jpg",
+                image: "../../picture/type1/011-2.3_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-2.3 1.jpg",
-                    "../../picture/type1/011-2.3 2.jpg",
-                    "../../picture/type1/011-2.3 3.jpg",
-                    "../../picture/type1/011-2.3 4.jpg"
+                    "../../picture/type1/011-2.3_1.jpg",
+                    "../../picture/type1/011-2.3_2.jpg",
+                    "../../picture/type1/011-2.3_3.jpg",
+                    "../../picture/type1/011-2.3_4.jpg"
                 ]
             },
             {
                 name: "颜色D",
                 code: "colorD",
-                image: "../../picture/type1/011-2.4 1.jpg",
+                image: "../../picture/type1/011-2.4_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-2.4 1.jpg",
-                    "../../picture/type1/011-2.4 2.jpg",
-                    "../../picture/type1/011-2.4 3.jpg",
-                    "../../picture/type1/011-2.4 4.jpg"
+                    "../../picture/type1/011-2.4_1.jpg",
+                    "../../picture/type1/011-2.4_2.jpg",
+                    "../../picture/type1/011-2.4_3.jpg",
+                    "../../picture/type1/011-2.4_4.jpg"
                 ]
             }
             
@@ -129,7 +129,7 @@ const productsData = [
         id: 3,
         name: "产品3.1",
         category: "type1",
-        image: "../../picture/type1/011-3.1 1.jpg",
+        image: "../../picture/type1/011-3.1_1.jpg",
         // description: "这是产品3.1的描述信息",
         // details: "这里是产品3.1的详细信息",
         features: [
@@ -144,44 +144,44 @@ const productsData = [
             {
                 name: "颜色A",
                 code: "colorA",
-                image: "../../picture/type1/011-3.1 1.jpg",
+                image: "../../picture/type1/011-3.1_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-3.1 1.jpg",
-                    "../../picture/type1/011-3.1 2.jpg",
-                    "../../picture/type1/011-3.1 3.jpg",
-                    "../../picture/type1/011-3.1 4.jpg"
+                    "../../picture/type1/011-3.1_1.jpg",
+                    "../../picture/type1/011-3.1_2.jpg",
+                    "../../picture/type1/011-3.1_3.jpg",
+                    "../../picture/type1/011-3.1_4.jpg"
                 ]
             },
             {
                 name: "颜色B",
                 code: "colorB",
-                image: "../../picture/type1/011-3.2 1.jpg",
+                image: "../../picture/type1/011-3.2_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-3.2 1.jpg",
-                    "../../picture/type1/011-3.2 2.jpg",
-                    "../../picture/type1/011-3.2 3.jpg",
-                    "../../picture/type1/011-3.2 4.jpg"
+                    "../../picture/type1/011-3.2_1.jpg",
+                    "../../picture/type1/011-3.2_2.jpg",
+                    "../../picture/type1/011-3.2_3.jpg",
+                    "../../picture/type1/011-3.2_4.jpg"
                 ]
             },
             {
                 name: "颜色C",
                 code: "colorC",
-                image: "../../picture/type1/011-3.3 1.jpg",
+                image: "../../picture/type1/011-3.3_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-3.3 1.jpg",
-                    "../../picture/type1/011-3.3 2.jpg",
-                    "../../picture/type1/011-3.3 3.jpg",
-                    "../../picture/type1/011-3.3 4.jpg"
+                    "../../picture/type1/011-3.3_1.jpg",
+                    "../../picture/type1/011-3.3_2.jpg",
+                    "../../picture/type1/011-3.3_3.jpg",
+                    "../../picture/type1/011-3.3_4.jpg"
                 ]
             },
             {
                 name: "颜色D",
                 code: "colorD",
-                image: "../../picture/type1/011-3.4 1.jpg",
+                image: "../../picture/type1/011-3.4_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-3.4 1.jpg",
-                    "../../picture/type1/011-3.4 2.jpg",
-                    "../../picture/type1/011-3.4 3.jpg",
+                    "../../picture/type1/011-3.4_1.jpg",
+                    "../../picture/type1/011-3.4_2.jpg",
+                    "../../picture/type1/011-3.4_3.jpg",
                 ]
             }
             
@@ -189,9 +189,9 @@ const productsData = [
     },
     {
         id: 4,
-        name: "产品4.1  ",
+        name: "产品4.1",
         category: "type1",
-        image: "../../picture/type1/011-4.1 1.jpg",
+        image: "../../picture/type1/011-4.1_1.jpg",
         // description: "这是产品4.1的描述信息",
         // details: "这里是产品4.1的详细信息，包含产品的特点、用途等",
         features: [
@@ -206,45 +206,45 @@ const productsData = [
             {
                 name: "颜色A",
                 code: "colorA",
-                image: "../../picture/type1/011-4.1 1.jpg",
+                image: "../../picture/type1/011-4.1_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-4.1 1.jpg",
-                    "../../picture/type1/011-4.1 2.jpg",
-                    "../../picture/type1/011-4.1 3.jpg",
-                    "../../picture/type1/011-4.1 4.jpg"
+                    "../../picture/type1/011-4.1_1.jpg",
+                    "../../picture/type1/011-4.1_2.jpg",
+                    "../../picture/type1/011-4.1_3.jpg",
+                    "../../picture/type1/011-4.1_4.jpg"
                 ]
             },
             {
                 name: "颜色B",
                 code: "colorB",
-                image: "../../picture/type1/011-4.2 1.jpg",
+                image: "../../picture/type1/011-4.2_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-4.2 1.jpg",
-                    "../../picture/type1/011-4.2 2.jpg",
-                    "../../picture/type1/011-4.2 3.jpg",
-                    "../../picture/type1/011-4.2 4.jpg"
+                    "../../picture/type1/011-4.2_1.jpg",
+                    "../../picture/type1/011-4.2_2.jpg",
+                    "../../picture/type1/011-4.2_3.jpg",
+                    "../../picture/type1/011-4.2_4.jpg"
                 ]
             },
             {
                 name: "颜色C",
                 code: "colorC",
-                image: "../../picture/type1/011-4.3 1.jpg",
+                image: "../../picture/type1/011-4.3_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-4.3 1.jpg",
-                    "../../picture/type1/011-4.3 2.jpg",
-                    "../../picture/type1/011-4.3 3.jpg",
-                    "../../picture/type1/011-4.3 4.jpg"
+                    "../../picture/type1/011-4.3_1.jpg",
+                    "../../picture/type1/011-4.3_2.jpg",
+                    "../../picture/type1/011-4.3_3.jpg",
+                    "../../picture/type1/011-4.3_4.jpg"
                 ]
             },
             {
                 name: "颜色D",
                 code: "colorD",
-                image: "../../picture/type1/011-4.4 1.jpg",
+                image: "../../picture/type1/011-4.4_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-4.4 1.jpg",
-                    "../../picture/type1/011-4.4 2.jpg",
-                    "../../picture/type1/011-4.4 3.jpg",
-                    "../../picture/type1/011-4.4 4.jpg"
+                    "../../picture/type1/011-4.4_1.jpg",
+                    "../../picture/type1/011-4.4_2.jpg",
+                    "../../picture/type1/011-4.4_3.jpg",
+                    "../../picture/type1/011-4.4_4.jpg"
                 ]
             }
         ]
@@ -255,7 +255,7 @@ const productsData = [
         id: 5,
         name: "产品5.1",
         category: "type1",
-        image: "../../picture/type1/011-5.1 1.jpg",
+        image: "../../picture/type1/011-5.1_1.jpg",
         // description: "这是产品5.1的描述信息",
         // details: "这里是产品5.1的详细信息，包含产品的特点、用途等",
         features: [
@@ -270,45 +270,45 @@ const productsData = [
             {
                 name: "颜色A",
                 code: "colorA",
-                image: "../../picture/type1/011-5.1 1.jpg",
+                image: "../../picture/type1/011-5.1_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-5.1 1.jpg",
-                    "../../picture/type1/011-5.1 2.jpg",
-                    "../../picture/type1/011-5.1 3.jpg",
-                    "../../picture/type1/011-5.1 4.jpg"
+                    "../../picture/type1/011-5.1_1.jpg",
+                    "../../picture/type1/011-5.1_2.jpg",
+                    "../../picture/type1/011-5.1_3.jpg",
+                    "../../picture/type1/011-5.1_4.jpg"
                 ]
             },
             {
                 name: "颜色B",
                 code: "colorB",
-                image: "../../picture/type1/011-5.2 1.jpg",
+                image: "../../picture/type1/011-5.2_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-5.2 1.jpg",
-                    "../../picture/type1/011-5.2 2.jpg",
-                    "../../picture/type1/011-5.2 3.jpg",
-                    "../../picture/type1/011-5.2 4.jpg"
+                    "../../picture/type1/011-5.2_1.jpg",
+                    "../../picture/type1/011-5.2_2.jpg",
+                    "../../picture/type1/011-5.2_3.jpg",
+                    "../../picture/type1/011-5.2_4.jpg"
                 ]
             },
             {
                 name: "颜色C",
                 code: "colorC",
-                image: "../../picture/type1/011-5.3 1.jpg",
+                image: "../../picture/type1/011-5.3_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-5.3 1.jpg",
-                    "../../picture/type1/011-5.3 2.jpg",
-                    "../../picture/type1/011-5.3 3.jpg",
-                    "../../picture/type1/011-5.3 4.jpg"
+                    "../../picture/type1/011-5.3_1.jpg",
+                    "../../picture/type1/011-5.3_2.jpg",
+                    "../../picture/type1/011-5.3_3.jpg",
+                    "../../picture/type1/011-5.3_4.jpg"
                 ]
             },
             {
                 name: "颜色D",
                 code: "colorD",
-                image: "../../picture/type1/011-5.4 1.jpg",
+                image: "../../picture/type1/011-5.4_1.jpg",
                 thumbnails: [
-                    "../../picture/type1/011-5.4 1.jpg",
-                    "../../picture/type1/011-5.4 2.jpg",
-                    "../../picture/type1/011-5.4 3.jpg",
-                    "../../picture/type1/011-5.4 4.jpg"
+                    "../../picture/type1/011-5.4_1.jpg",
+                    "../../picture/type1/011-5.4_2.jpg",
+                    "../../picture/type1/011-5.4_3.jpg",
+                    "../../picture/type1/011-5.4_4.jpg"
                 ]
             }
         ]
@@ -333,7 +333,7 @@ const productsData = [
         id: 101,
         name: "012-1.1",
         category: "type2",
-        image: "../../picture/type2/012-1.1 3.jpg",
+        image: "../../picture/type2/012-1.1_3.jpg",
         // description: "这是产品1.1的描述信息",
         // details: "这里是产品1.1的详细信息",
         features: [
@@ -344,12 +344,12 @@ const productsData = [
             {
                 name: "brown",
                 code: "brown",
-                image: "../../picture/type2/012-1.1 3.jpg",
+                image: "../../picture/type2/012-1.1_3.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-1.1 1.jpg",
-                    "../../picture/type2/012-1.1 2.pg",
-                    "../../picture/type2/012-1.1 3.jpg",
-                    "../../picture/type2/012-1.1 4.jpg"
+                    "../../picture/type2/012-1.1_1.jpg",
+                    "../../picture/type2/012-1.1_2.jpg",
+                    "../../picture/type2/012-1.1_3.jpg",
+                    "../../picture/type2/012-1.1_4.jpg"
                 ]
             }
         ]
@@ -358,7 +358,7 @@ const productsData = [
         id: 102,
         name: "012-1.2",
         category: "type2",
-        image: "../../picture/type2/012-1.2 4.jpg",
+        image: "../../picture/type2/012-1.2_4.jpg",
         // description: "这是产品1.1的描述信息",
         // details: "这里是产品1.1的详细信息",
         features: [
@@ -369,40 +369,40 @@ const productsData = [
             {
                 name: "yellow",
                 code: "yellow",
-                image: "../../picture/type2/012-1.2 4.jpg",
+                image: "../../picture/type2/012-1.2_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-1.2 1.jpg",
-                    "../../picture/type2/012-1.2 2.jpg",
-                    "../../picture/type2/012-1.2 4.jpg"
+                    "../../picture/type2/012-1.2_1.jpg",
+                    "../../picture/type2/012-1.2_2.jpg",
+                    "../../picture/type2/012-1.2_4.jpg"
                 ]
             }, 
             {
                 name: "grayish brown",
                 code: "grayish brown",
-                image: "../../picture/type2/012-1.3 4.jpg",
+                image: "../../picture/type2/012-1.3_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-1.3 1.jpg",
-                    "../../picture/type2/012-1.3 2.jpg",
-                    "../../picture/type2/012-1.3 4.jpg"
+                    "../../picture/type2/012-1.3_1.jpg",
+                    "../../picture/type2/012-1.3_2.jpg",
+                    "../../picture/type2/012-1.3_4.jpg"
                 ]
             },
             {
                 name: "reddish brown",
                 code: "reddish brown",
-                image: "../../picture/type2/012-1.4 1 .jpg",
+                image: "../../picture/type2/012-1.4_1.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-1.4 1 .jpg",
-                    "../../picture/type2/012-1.4 2.jpg",
-                    "../../picture/type2/012-1.4 4.jpg"
+                    "../../picture/type2/012-1.4_1.jpg",
+                    "../../picture/type2/012-1.4_2.jpg",
+                    "../../picture/type2/012-1.4_4.jpg"
                 ]
             }
         ]
     },
     {
         id: 103,
-        name: "012-1.5.",
+        name: "012-1.5",
         category: "type2",
-        image: "../../picture/type2/012-1.5 4.jpg",
+        image: "../../picture/type2/012-1.5_4.jpg",
         // description: "这是产品1.1的描述信息",
         // details: "这里是产品1.1的详细信息",
         features: [
@@ -413,41 +413,41 @@ const productsData = [
             {
                 name: "brown",
                 code: "brown",
-                image: "../../picture/type2/012-1.5 4.jpg",
+                image: "../../picture/type2/012-1.5_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-1.5 1.jpg",
-                    "../../picture/type2/012-1.5 2.jpg",
-                    "../../picture/type2/012-1.5 4.jpg"
+                    "../../picture/type2/012-1.5_1.jpg",
+                    "../../picture/type2/012-1.5_2.jpg",
+                    "../../picture/type2/012-1.5_4.jpg"
                 ]
             },
             {
                 name: "green brown",
                 code: "green brown",
-                image: "../../picture/type2/012-1.6 4.jpg",
+                image: "../../picture/type2/012-1.6_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-1.6 1 .jpg",
-                    "../../picture/type2/012-1.6 2.jpg",
-                    "../../picture/type2/012-1.6 4.jpg"
+                    "../../picture/type2/012-1.6_1.jpg",
+                    "../../picture/type2/012-1.6_2.jpg",
+                    "../../picture/type2/012-1.6_4.jpg"
                 ]
             }, 
             {
                 name: "cyan",
                 code: "cyan",
-                image: "../../picture/type2/012-1.7 4.jpg",
+                image: "../../picture/type2/012-1.7_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-1.7 1.jpg",
-                    "../../picture/type2/012-1.7 2.jpg",
-                    "../../picture/type2/012-1.7 4.jpg"
+                    "../../picture/type2/012-1.7_1.jpg",
+                    "../../picture/type2/012-1.7_2.jpg",
+                    "../../picture/type2/012-1.7_4.jpg"
                 ]
             },
             {
                 name: "red",
                 code: "red",
-                image: "../../picture/type2/012-1.8 4 .jpg",
+                image: "../../picture/type2/012-1.8_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-1.8 1 .jpg",
-                    "../../picture/type2/012-1.8 2.jpg",
-                    "../../picture/type2/012-1.8 4.jpg"
+                    "../../picture/type2/012-1.8_1.jpg",
+                    "../../picture/type2/012-1.8_2.jpg",
+                    "../../picture/type2/012-1.8_4.jpg"
                 ]
             }
         ]
@@ -456,7 +456,7 @@ const productsData = [
         id: 104,
         name: "012-1.9",
         category: "type2",
-        image: "../../picture/type2/012-1.9 4.jpg",
+        image: "../../picture/type2/012-1.9_4.jpg",
         // description: "这是产品1.1的描述信息",
         // details: "这里是产品1.1的详细信息",
         features: [
@@ -467,91 +467,91 @@ const productsData = [
             {
                 name: "brown",
                 code: "brown",
-                image: "../../picture/type2/012-1.9 4.jpg",
+                image: "../../picture/type2/012-1.9_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-1.9 1.jpg",
-                    "../../picture/type2/012-1.9 2.jpg",
-                    "../../picture/type2/012-1.9 4.jpg"
+                    "../../picture/type2/012-1.9_1.jpg",
+                    "../../picture/type2/012-1.9_2.jpg",
+                    "../../picture/type2/012-1.9_4.jpg"
                 ]
             },
             {
                 name: "green-brown",
                 code: "green-brown",
-                image: "../../picture/type2/012-2.3 4.jpg",
+                image: "../../picture/type2/012-2.3_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-2.3 1 .jpg",
-                    "../../picture/type2/012-2.3 2.jpg",
-                    "../../picture/type2/012-2.3 4.jpg"
+                    "../../picture/type2/012-2.3_1.jpg",
+                    "../../picture/type2/012-2.3_2.jpg",
+                    "../../picture/type2/012-2.3_4.jpg"
                 ]
             },
             {
                 name: "dark green",
                 code: "dark green",
-                image: "../../picture/type2/012-2.4 4.jpg",
+                image: "../../picture/type2/012-2.4_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-2.4 1.jpg",
-                    "../../picture/type2/012-2.4 2.jpg",
-                    "../../picture/type2/012-2.4 4.jpg"
+                    "../../picture/type2/012-2.4_1.jpg",
+                    "../../picture/type2/012-2.4_2.jpg",
+                    "../../picture/type2/012-2.4_4.jpg"
                 ]
             },
             {
                 name: "brown",
                 code: "brown",
-                image: "../../picture/type2/012-2.5 4.jpg",
+                image: "../../picture/type2/012-2.5_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-2.5 1 .jpg",
-                    "../../picture/type2/012-2.5 2.jpg",
-                    "../../picture/type2/012-2.5 4.jpg"
+                    "../../picture/type2/012-2.5_1.jpg",
+                    "../../picture/type2/012-2.5_2.jpg",
+                    "../../picture/type2/012-2.5_4.jpg"
                 ]
             },
             {
                 name: "green-brown",
                 code: "green-brown",
-                image: "../../picture/type2/012-2.6 4.jpg",
+                image: "../../picture/type2/012-2.6_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-2.6 1.jpg",
-                    "../../picture/type2/012-2.6 2.jpg",
-                    "../../picture/type2/012-2.6 4.jpg"
+                    "../../picture/type2/012-2.6_1.jpg",
+                    "../../picture/type2/012-2.6_2.jpg",
+                    "../../picture/type2/012-2.6_4.jpg"
                 ]
             },
             {
                 name: "green-brack",
                 code: "green-brack",
-                image: "../../picture/type2/012-2.7 4.jpg",
+                image: "../../picture/type2/012-2.7_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-2.7 1 .jpg",
-                    "../../picture/type2/012-2.7 2.jpg",
-                    "../../picture/type2/012-2.7 4.jpg"
+                    "../../picture/type2/012-2.7_1.jpg",
+                    "../../picture/type2/012-2.7_2.jpg",
+                    "../../picture/type2/012-2.7_4.jpg"
                 ]
             },
             {
                 name: "dark green",
                 code: "dark green",
-                image: "../../picture/type2/012-2.8 4.jpg",
+                image: "../../picture/type2/012-2.8_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-2.8 1.jpg",
-                    "../../picture/type2/012-2.8 2.jpg",
-                    "../../picture/type2/012-2.8 4.jpg"
+                    "../../picture/type2/012-2.8_1.jpg",
+                    "../../picture/type2/012-2.8_2.jpg",
+                    "../../picture/type2/012-2.8_4.jpg"
                 ]
             },
             {
                 name: "brown",
                 code: "brown",
-                image: "../../picture/type2/012-2.9 4.jpg",
+                image: "../../picture/type2/012-2.9_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-2.9 1 .jpg",
-                    "../../picture/type2/012-2.9 2.jpg",
-                    "../../picture/type2/012-2.9 4.jpg"
+                    "../../picture/type2/012-2.9_1.jpg",
+                    "../../picture/type2/012-2.9_2.jpg",
+                    "../../picture/type2/012-2.9_4.jpg"
                 ]
             },
             {
                 name: "dark green-brown",
                 code: "dark green-brown",
-                image: "../../picture/type2/012-3.0 4.jpg",
+                image: "../../picture/type2/012-3.0_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-3.0 1.jpg",
-                    "../../picture/type2/012-3.0 2.jpg",
-                    "../../picture/type2/012-3.0 4.jpg"
+                    "../../picture/type2/012-3.0_1.jpg",
+                    "../../picture/type2/012-3.0_2.jpg",
+                    "../../picture/type2/012-3.0_4.jpg"
                 ]
             }
         ]
@@ -560,7 +560,7 @@ const productsData = [
         id: 105,
         name: "012-3.1",
         category: "type2",
-        image: "../../picture/type2/012-3.1 3.jpg",
+        image: "../../picture/type2/012-3.1_3.jpg",
         // description: "这是产品1.1的描述信息",
         // details: "这里是产品1.1的详细信息",
         features: [
@@ -571,34 +571,34 @@ const productsData = [
             {
                 name: "black",
                 code: "black",
-                image: "../../picture/type2/012-3.1 4.jpg",
+                image: "../../picture/type2/012-3.1_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-3.1 1.jpg",
-                    "../../picture/type2/012-3.1 2.jpg",
-                    "../../picture/type2/012-3.1 3.jpg",
-                    "../../picture/type2/012-3.1 4.jpg"
+                    "../../picture/type2/012-3.1_1.jpg",
+                    "../../picture/type2/012-3.1_2.jpg",
+                    "../../picture/type2/012-3.1_3.jpg",
+                    "../../picture/type2/012-3.1_4.jpg"
                 ]
             },
             {
                 name: "brown",
                 code: "brown",
-                image: "../../picture/type2/012-3.2 4.jpg",
+                image: "../../picture/type2/012-3.2_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-3.2 1.jpg",
-                    "../../picture/type2/012-3.2 2.jpg",
-                    "../../picture/type2/012-3.2 3.jpg",
-                    "../../picture/type2/012-3.2 4.jpg"
+                    "../../picture/type2/012-3.2_1.jpg",
+                    "../../picture/type2/012-3.2_2.jpg",
+                    "../../picture/type2/012-3.2_3.jpg",
+                    "../../picture/type2/012-3.2_4.jpg"
                 ]
             },
             {
                 name: "green",
                 code: "green",
-                image: "../../picture/type2/012-3.3 4.jpg",
+                image: "../../picture/type2/012-3.3_4.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-3.3 1.jpg",
-                    "../../picture/type2/012-3.3 2.jpg",
-                    "../../picture/type2/012-3.3 3.jpg",
-                    "../../picture/type2/012-3.3 4.jpg"
+                    "../../picture/type2/012-3.3_1.jpg",
+                    "../../picture/type2/012-3.3_2.jpg",
+                    "../../picture/type2/012-3.3_3.jpg",
+                    "../../picture/type2/012-3.3_4.jpg"
                 ]
             }
         ]
@@ -619,17 +619,17 @@ const productsData = [
             {
                 name: "black",
                 code: "black",
-                image: "../../picture/type2/012-2.0 1.jpg",
+                image: "../../picture/type2/012-2.0_1.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-2.0 1.jpg"
+                    "../../picture/type2/012-2.0_1.jpg"
                 ]
             },
             {
                 name: "brown",
                 code: "brown",
-                image: "../../picture/type2/012-2.1 1.jpg",
+                image: "../../picture/type2/012-2.1_1.jpg",
                 thumbnails: [
-                    "../../picture/type2/012-2.1 1.jpg"
+                    "../../picture/type2/012-2.1_1.jpg"
                 ]
             }
         ]
