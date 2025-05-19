@@ -50,44 +50,51 @@ function setActiveNavLink() {
 // 初始化分类栏
 function initCategories() {
     const categoryList = document.querySelector('.category-list');
+    categoryList.innerHTML = ''; // 先清空
     const categories = getAllCategories();
     
-    // 分类名称映射
+    // 分类名称映射（中英文）
     const categoryMapping = {
-        'type1': '登山鞋',
-        'type2': '西部牛仔靴',
-        'type3': '固特异工作鞋'
+        'type1': { 'zh': '登山鞋', 'en': 'Hiking Boots' },
+        'type2': { 'zh': '西部牛仔靴', 'en': 'Cowboy Leather Outsole Boots' },
+        'type3': { 'zh': '固特异工作鞋', 'en': 'Goodyear Welt Work Shoes' }
     };
     
-    // 添加所有产品分类
+    const currentLang = document.documentElement.lang || 'zh';
+    
     categories.forEach(category => {
         const categoryItem = document.createElement('li');
         categoryItem.className = 'category-item';
-        // 使用映射显示中文名称，但保留原始分类值作为数据属性
-        categoryItem.textContent = categoryMapping[category] || category;
+        categoryItem.textContent = (categoryMapping[category] && categoryMapping[category][currentLang]) || category;
         categoryItem.setAttribute('data-category', category);
         categoryList.appendChild(categoryItem);
     });
     
-    // 为所有分类项添加点击事件
+    // 重新绑定点击事件
     const categoryItems = document.querySelectorAll('.category-item');
     categoryItems.forEach(item => {
         item.addEventListener('click', function() {
-            // 移除所有分类项的激活状态
             categoryItems.forEach(cat => cat.classList.remove('active'));
-            
-            // 添加当前点击项的激活状态
             this.classList.add('active');
-            
-            // 获取分类名称
             const category = this.getAttribute('data-category');
-            console.log(`选择分类: ${this.textContent}`);
-            
-            // 筛选产品
             filterProductsByCategory(category);
         });
     });
 }
+
+// 监听语言切换事件，切换时重新渲染分类栏并高亮第一个分类
+document.addEventListener('languageChanged', function(e) {
+    initCategories();
+    // 重新高亮第一个分类并显示产品
+    const firstCategory = getAllCategories()[0];
+    if (firstCategory) {
+        const firstCategoryItem = document.querySelector(`.category-item[data-category="${firstCategory}"]`);
+        if (firstCategoryItem) {
+            firstCategoryItem.classList.add('active');
+            filterProductsByCategory(firstCategory);
+        }
+    }
+});
 
 // 初始化产品展示
 function initProducts() {

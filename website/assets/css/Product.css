@@ -300,12 +300,12 @@ body {
 .product-main {
     display: flex;
     width: 100%;
-    margin-left: 200px; /* 为左侧分类栏腾出空间 */
+    margin-left: 300px; /* 为左侧分类栏腾出空间 */
 }
 
 /* 左侧分类栏 */
 .category-sidebar {
-    width: 200px;
+    width: 300px;
     margin-right: 40px;
     flex-shrink: 0;
     position: fixed;
@@ -313,7 +313,7 @@ body {
     left: calc((100% - 1380px) / 2); /* 居中计算 */
     transform: translateY(-50%); /* 垂直居中 */
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 25px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 10;
