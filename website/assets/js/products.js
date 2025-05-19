@@ -3,11 +3,8 @@ const productsData = [
     // 类型1产品
     {
         id: 1,
-        name: "产品1.1",
         category: "type1",
         image: "../../picture/type1/011-1_1.jpg",
-        // description: "这是产品1.1的描述信息",
-        // details: "这里是产品1.1的详细信息",
         features: [
             "11111111111111",
             "22222222222222",
@@ -64,18 +61,14 @@ const productsData = [
     },
     {
         id: 2,
-        name: "产品2.1",
         category: "type1",
         image: "../../picture/type1/011-2.1_1.jpg",
-        // description: "这是产品1.2的描述信息",
-        // details: "这里是产品1.2的详细信息",
         features: [
             "11111111111111",
             "22222222222222",
             "33333333333333",
             "44444444444444",
             "55555555555555",
-
         ],
         colors: [
             {
@@ -122,23 +115,18 @@ const productsData = [
                     "../../picture/type1/011-2.4_4.jpg"
                 ]
             }
-            
         ]
     },
     {
         id: 3,
-        name: "产品3.1",
         category: "type1",
         image: "../../picture/type1/011-3.1_1.jpg",
-        // description: "这是产品3.1的描述信息",
-        // details: "这里是产品3.1的详细信息",
         features: [
             "11111111111111",
             "22222222222222",
             "33333333333333",
             "44444444444444",
             "55555555555555",
-
         ],
         colors: [
             {
@@ -181,26 +169,21 @@ const productsData = [
                 thumbnails: [
                     "../../picture/type1/011-3.4_1.jpg",
                     "../../picture/type1/011-3.4_2.jpg",
-                    "../../picture/type1/011-3.4_3.jpg",
+                    "../../picture/type1/011-3.4_3.jpg"
                 ]
             }
-            
         ]
     },
     {
         id: 4,
-        name: "产品4.1",
         category: "type1",
         image: "../../picture/type1/011-4.1_1.jpg",
-        // description: "这是产品4.1的描述信息",
-        // details: "这里是产品4.1的详细信息，包含产品的特点、用途等",
         features: [
             "11111111111111",
             "22222222222222",
             "33333333333333",
             "44444444444444",
             "55555555555555",
-
         ],
         colors: [
             {
@@ -249,22 +232,16 @@ const productsData = [
             }
         ]
     },
-    
-    // 类型2产品
     {
         id: 5,
-        name: "产品5.1",
         category: "type1",
         image: "../../picture/type1/011-5.1_1.jpg",
-        // description: "这是产品5.1的描述信息",
-        // details: "这里是产品5.1的详细信息，包含产品的特点、用途等",
         features: [
             "11111111111111",
             "22222222222222",
             "33333333333333",
             "44444444444444",
             "55555555555555",
-
         ],
         colors: [
             {
@@ -315,11 +292,8 @@ const productsData = [
     },
     {
         id: 6,
-        name: "产品6.1",
         category: "type3",
         image: "../../picture/Product1.jpg",
-        // description: "这是产品6.1的描述信息",
-        // details: "这里是产品6.1的详细信息，",
         features: [
             "11111111111111",
             "22222222222222",
@@ -328,14 +302,10 @@ const productsData = [
             "55555555555555",
         ]
     },
-    
     {
         id: 101,
-        name: "012-1.1",
         category: "type2",
         image: "../../picture/type2/012-1.1_3.jpg",
-        // description: "这是产品1.1的描述信息",
-        // details: "这里是产品1.1的详细信息",
         features: [
             "11111111111111",
             "22222222222222",
@@ -356,11 +326,8 @@ const productsData = [
     },
     {
         id: 102,
-        name: "012-1.2",
         category: "type2",
         image: "../../picture/type2/012-1.2_4.jpg",
-        // description: "这是产品1.1的描述信息",
-        // details: "这里是产品1.1的详细信息",
         features: [
             "11111111111111",
             "22222222222222",
@@ -375,7 +342,7 @@ const productsData = [
                     "../../picture/type2/012-1.2_2.jpg",
                     "../../picture/type2/012-1.2_4.jpg"
                 ]
-            }, 
+            },
             {
                 name: "grayish brown",
                 code: "grayish brown",
@@ -400,11 +367,8 @@ const productsData = [
     },
     {
         id: 103,
-        name: "012-1.5",
         category: "type2",
         image: "../../picture/type2/012-1.5_4.jpg",
-        // description: "这是产品1.1的描述信息",
-        // details: "这里是产品1.1的详细信息",
         features: [
             "11111111111111",
             "22222222222222",
@@ -429,7 +393,7 @@ const productsData = [
                     "../../picture/type2/012-1.6_2.jpg",
                     "../../picture/type2/012-1.6_4.jpg"
                 ]
-            }, 
+            },
             {
                 name: "cyan",
                 code: "cyan",
@@ -454,11 +418,8 @@ const productsData = [
     },
     {
         id: 104,
-        name: "012-1.9",
         category: "type2",
         image: "../../picture/type2/012-1.9_4.jpg",
-        // description: "这是产品1.1的描述信息",
-        // details: "这里是产品1.1的详细信息",
         features: [
             "11111111111111",
             "22222222222222",
@@ -558,11 +519,8 @@ const productsData = [
     },
     {
         id: 105,
-        name: "012-3.1",
         category: "type2",
         image: "../../picture/type2/012-3.1_3.jpg",
-        // description: "这是产品1.1的描述信息",
-        // details: "这里是产品1.1的详细信息",
         features: [
             "11111111111111",
             "22222222222222",
@@ -603,14 +561,10 @@ const productsData = [
             }
         ]
     },
-  
     {
         id: 107,
-        name: "012-2.0",
         category: "type2",
         image: "../../picture/type2/012-2.0.jpg",
-        // description: "这是产品1.1的描述信息",
-        // details: "这里是产品1.1的详细信息",
         features: [
             "11111111111111",
             "22222222222222",

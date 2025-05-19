@@ -43,14 +43,14 @@ function displayProductData(product) {
     const categoryDisplayName = categoryMapping[product.category] || product.category;
     
     // 更新页面标题
-    document.title = `${product.name} - 产品详情`;
+    document.title = `产品详情`;
     
     // 更新面包屑导航
-    document.getElementById('product-name').textContent = product.name;
+    document.getElementById('product-name').textContent = '产品详情';
     
     // 更新产品信息
-    document.querySelector('.product-title').textContent = product.name;
-    document.querySelector('.product-subtitle').textContent = categoryDisplayName;
+    document.querySelector('.product-title').textContent = categoryDisplayName;
+    document.querySelector('.product-subtitle').textContent = '';
     
     // 注释掉产品描述文本，暂时不显示
     // document.getElementById('product-description-text').textContent = product.details;
@@ -60,7 +60,7 @@ function displayProductData(product) {
     // 更新主图
     const mainImage = document.getElementById('main-image');
     mainImage.src = product.image;
-    mainImage.alt = product.name;
+    mainImage.alt = '产品图片';
     
     // 如果产品有颜色选项，则生成颜色选择器
     if (product.colors && product.colors.length > 0) {

@@ -52,12 +52,6 @@ function initCategories() {
     const categoryList = document.querySelector('.category-list');
     const categories = getAllCategories();
     
-    // 添加"全部"分类选项
-    const allCategoryItem = document.createElement('li');
-    allCategoryItem.className = 'category-item active';
-    allCategoryItem.textContent = '全部';
-    categoryList.appendChild(allCategoryItem);
-    
     // 分类名称映射
     const categoryMapping = {
         'type1': '登山鞋',
@@ -85,10 +79,9 @@ function initCategories() {
             // 添加当前点击项的激活状态
             this.classList.add('active');
             
-            // 获取分类名称 - 如果是全部，直接使用文本内容，否则使用保存的原始分类值
-            const categoryText = this.textContent;
-            const category = categoryText === '全部' ? categoryText : this.getAttribute('data-category');
-            console.log(`选择分类: ${categoryText}`);
+            // 获取分类名称
+            const category = this.getAttribute('data-category');
+            console.log(`选择分类: ${this.textContent}`);
             
             // 筛选产品
             filterProductsByCategory(category);
@@ -98,8 +91,15 @@ function initCategories() {
 
 // 初始化产品展示
 function initProducts() {
-    // 默认显示所有产品
-    renderProducts(productsData);
+    // 默认显示第一个分类的产品
+    const firstCategory = getAllCategories()[0];
+    if (firstCategory) {
+        const firstCategoryItem = document.querySelector(`.category-item[data-category="${firstCategory}"]`);
+        if (firstCategoryItem) {
+            firstCategoryItem.classList.add('active');
+            filterProductsByCategory(firstCategory);
+        }
+    }
 }
 
 // 渲染产品列表
@@ -116,12 +116,7 @@ function renderProducts(products) {
         productItem.innerHTML = `
             <a href="ProductDetail.html?id=${product.id}" class="product-link">
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">${product.name}</h3>
-                    <!-- 暂时隐藏产品描述 -->
-                    <!-- <p class="product-description">${product.description || ''}</p> -->
+                    <img src="${product.image}" alt="产品图片">
                 </div>
             </a>
         `;
