@@ -32,30 +32,34 @@ function loadProductData() {
 
 // 显示产品数据
 function displayProductData(product) {
-    // 分类名称映射
+    // 分类名称映射（中英文）
     const categoryMapping = {
-        'type1': '登山鞋',
-        'type2': '西部牛仔靴',
-        'type3': '固特异工作鞋'
+        'type1': { zh: '登山鞋', en: 'Hiking Boots' },
+        'type2': { zh: '固特异工作鞋', en: 'Goodyear Welt Work Shoes' },
+        'type3': { zh: '西部牛仔靴', en: 'Cowboy Leather Outsole Boots' }
     };
-    
-    // 获取分类的显示名称
-    const categoryDisplayName = categoryMapping[product.category] || product.category;
+    const lang = localStorage.getItem('language') || 'en';
+    const categoryDisplayName = (categoryMapping[product.category] && categoryMapping[product.category][lang]) || product.category;
     
     // 更新页面标题
-    document.title = `产品详情`;
+    document.title = lang === 'zh' ? '产品详情' : 'Product Detail';
     
     // 更新面包屑导航
-    document.getElementById('product-name').textContent = '产品详情';
+    // document.getElementById('product-name').textContent = '产品详情';
     
     // 更新产品信息
-    document.querySelector('.product-title').textContent = categoryDisplayName;
-    document.querySelector('.product-subtitle').textContent = '';
+    const productTitleEl = document.querySelector('.product-title');
+    productTitleEl.textContent = categoryDisplayName;
+    productTitleEl.removeAttribute('data-i18n');
+
+    const productSubtitleEl = document.querySelector('.product-subtitle');
+    productSubtitleEl.textContent = '';
+    productSubtitleEl.removeAttribute('data-i18n');
     
     // 注释掉产品描述文本，暂时不显示
     // document.getElementById('product-description-text').textContent = product.details;
     
-    document.getElementById('style-code').textContent = `款式：${categoryDisplayName}`;
+    document.getElementById('style-code').textContent = categoryDisplayName;
     
     // 更新主图
     const mainImage = document.getElementById('main-image');
@@ -71,7 +75,13 @@ function displayProductData(product) {
         generateThumbnailsFromColor(firstColor);
         
         // 显示颜色名称
-        document.querySelector('.color-options h3').textContent = `显示颜色：${firstColor.name}`;
+        const firstColorName = lang === 'en' ? firstColor.name_en : firstColor.name;
+        const colorTextEl = document.querySelector('.color-options h3');
+        colorTextEl.setAttribute('data-i18n-before', 'product.color_show');
+        colorTextEl.textContent = firstColorName;
+        if (typeof setLanguage === 'function') {
+            setLanguage(lang);
+        }
     } else {
         // 如果没有颜色选项，则使用默认方式生成缩略图
         generateThumbnails(product);
@@ -84,6 +94,8 @@ function displayProductData(product) {
     
     // 初始化图片切换功能
     initImageSwitcher();
+    // 保证动态内容渲染后立即同步语言
+    if (typeof setLanguage === 'function') setLanguage(localStorage.getItem('language') || 'en');
 }
 
 // 生成颜色选择器
@@ -145,19 +157,17 @@ function generateThumbnails(product) {
     for (let i = 1; i <= 4; i++) {
         // 构建图片路径，假设图片命名如: xxx-1.jpg, xxx-2.jpg
         const thumbnailPath = `${baseImagePath.replace(/\d+$/, '')}${i}${imageExtension}`;
-        
         const thumbnailDiv = document.createElement('div');
         thumbnailDiv.className = i === 1 ? 'thumbnail active' : 'thumbnail';
         thumbnailDiv.setAttribute('data-image', thumbnailPath);
-        
         const thumbnailImg = document.createElement('img');
         thumbnailImg.src = thumbnailPath;
         thumbnailImg.alt = `${product.name} - 视角${i}`;
-        
         thumbnailDiv.appendChild(thumbnailImg);
         thumbnailGallery.appendChild(thumbnailDiv);
     }
 }
+
 
 // 生成特性列表
 function generateFeatureList(features) {
@@ -220,6 +230,12 @@ function initColorSelection(colors) {
         generateThumbnailsFromColor(selectedColor);
         
         // 更新颜色文本
-        colorTextEl.textContent = `显示颜色：${selectedColor.name}`;
+        const lang = localStorage.getItem('language') || 'en';
+        const selectedColorName = lang === 'en' ? selectedColor.name_en : selectedColor.name;
+        colorTextEl.setAttribute('data-i18n-before', 'product.color_show');
+        colorTextEl.textContent = selectedColorName;
+        if (typeof setLanguage === 'function') {
+            setLanguage(lang);
+        }
     });
 } 

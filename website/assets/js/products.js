@@ -15,6 +15,7 @@ const productsData = [
         colors: [
             {
                 name: "颜色1",
+                name_en: "Color 1",
                 code: "color1",
                 image: "../../picture/type1/011-1_1.jpg",
                 thumbnails: [
@@ -26,6 +27,7 @@ const productsData = [
             },
             {
                 name: "颜色2",
+                name_en: "Color 2",
                 code: "color2",
                 image: "../../picture/type1/011-1.2_1.jpg",
                 thumbnails: [
@@ -37,6 +39,7 @@ const productsData = [
             },
             {
                 name: "颜色3",
+                name_en: "Color 3",
                 code: "color3",
                 image: "../../picture/type1/011-1.3_1.jpg",
                 thumbnails: [
@@ -48,6 +51,7 @@ const productsData = [
             },
             {
                 name: "颜色4",
+                name_en: "Color 4",
                 code: "color4",
                 image: "../../picture/type1/011-1.4_1.jpg",
                 thumbnails: [
@@ -73,6 +77,7 @@ const productsData = [
         colors: [
             {
                 name: "颜色A",
+                name_en: "Color A",
                 code: "colorA",
                 image: "../../picture/type1/011-2.1_1.jpg",
                 thumbnails: [
@@ -84,6 +89,7 @@ const productsData = [
             },
             {
                 name: "颜色B",
+                name_en: "Color B",
                 code: "colorB",
                 image: "../../picture/type1/011-2.2_1.jpg",
                 thumbnails: [
@@ -95,6 +101,7 @@ const productsData = [
             },
             {
                 name: "颜色C",
+                name_en: "Color C",
                 code: "colorC",
                 image: "../../picture/type1/011-2.3_1.jpg",
                 thumbnails: [
@@ -106,6 +113,7 @@ const productsData = [
             },
             {
                 name: "颜色D",
+                name_en: "Color D",
                 code: "colorD",
                 image: "../../picture/type1/011-2.4_1.jpg",
                 thumbnails: [
@@ -131,6 +139,7 @@ const productsData = [
         colors: [
             {
                 name: "颜色A",
+                name_en: "Color A",
                 code: "colorA",
                 image: "../../picture/type1/011-3.1_1.jpg",
                 thumbnails: [
@@ -142,6 +151,7 @@ const productsData = [
             },
             {
                 name: "颜色B",
+                name_en: "Color B",
                 code: "colorB",
                 image: "../../picture/type1/011-3.2_1.jpg",
                 thumbnails: [
@@ -153,6 +163,7 @@ const productsData = [
             },
             {
                 name: "颜色C",
+                name_en: "Color C",
                 code: "colorC",
                 image: "../../picture/type1/011-3.3_1.jpg",
                 thumbnails: [
@@ -164,6 +175,7 @@ const productsData = [
             },
             {
                 name: "颜色D",
+                name_en: "Color D",
                 code: "colorD",
                 image: "../../picture/type1/011-3.4_1.jpg",
                 thumbnails: [
@@ -188,6 +200,7 @@ const productsData = [
         colors: [
             {
                 name: "颜色A",
+                name_en: "Color A",
                 code: "colorA",
                 image: "../../picture/type1/011-4.1_1.jpg",
                 thumbnails: [
@@ -199,6 +212,7 @@ const productsData = [
             },
             {
                 name: "颜色B",
+                name_en: "Color B",
                 code: "colorB",
                 image: "../../picture/type1/011-4.2_1.jpg",
                 thumbnails: [
@@ -210,6 +224,7 @@ const productsData = [
             },
             {
                 name: "颜色C",
+                name_en: "Color C",
                 code: "colorC",
                 image: "../../picture/type1/011-4.3_1.jpg",
                 thumbnails: [
@@ -221,6 +236,7 @@ const productsData = [
             },
             {
                 name: "颜色D",
+                name_en: "Color D",
                 code: "colorD",
                 image: "../../picture/type1/011-4.4_1.jpg",
                 thumbnails: [
@@ -246,6 +262,7 @@ const productsData = [
         colors: [
             {
                 name: "颜色A",
+                name_en: "Color A",
                 code: "colorA",
                 image: "../../picture/type1/011-5.1_1.jpg",
                 thumbnails: [
@@ -257,6 +274,7 @@ const productsData = [
             },
             {
                 name: "颜色B",
+                name_en: "Color B",
                 code: "colorB",
                 image: "../../picture/type1/011-5.2_1.jpg",
                 thumbnails: [
@@ -268,6 +286,7 @@ const productsData = [
             },
             {
                 name: "颜色C",
+                name_en: "Color C",
                 code: "colorC",
                 image: "../../picture/type1/011-5.3_1.jpg",
                 thumbnails: [
@@ -279,6 +298,7 @@ const productsData = [
             },
             {
                 name: "颜色D",
+                name_en: "Color D",
                 code: "colorD",
                 image: "../../picture/type1/011-5.4_1.jpg",
                 thumbnails: [
@@ -313,6 +333,7 @@ const productsData = [
         colors: [
             {
                 name: "brown",
+                name_en: "Brown",
                 code: "brown",
                 image: "../../picture/type2/012-1.1_3.jpg",
                 thumbnails: [
@@ -335,6 +356,7 @@ const productsData = [
         colors: [
             {
                 name: "yellow",
+                name_en: "Yellow",
                 code: "yellow",
                 image: "../../picture/type2/012-1.2_4.jpg",
                 thumbnails: [
@@ -345,6 +367,7 @@ const productsData = [
             },
             {
                 name: "grayish brown",
+                name_en: "Grayish Brown",
                 code: "grayish brown",
                 image: "../../picture/type2/012-1.3_4.jpg",
                 thumbnails: [
@@ -355,6 +378,7 @@ const productsData = [
             },
             {
                 name: "reddish brown",
+                name_en: "Reddish Brown",
                 code: "reddish brown",
                 image: "../../picture/type2/012-1.4_1.jpg",
                 thumbnails: [
@@ -376,6 +400,7 @@ const productsData = [
         colors: [
             {
                 name: "brown",
+                name_en: "Brown",
                 code: "brown",
                 image: "../../picture/type2/012-1.5_4.jpg",
                 thumbnails: [
@@ -386,6 +411,7 @@ const productsData = [
             },
             {
                 name: "green brown",
+                name_en: "Green Brown",
                 code: "green brown",
                 image: "../../picture/type2/012-1.6_4.jpg",
                 thumbnails: [
@@ -396,6 +422,7 @@ const productsData = [
             },
             {
                 name: "cyan",
+                name_en: "Cyan",
                 code: "cyan",
                 image: "../../picture/type2/012-1.7_4.jpg",
                 thumbnails: [
@@ -406,6 +433,7 @@ const productsData = [
             },
             {
                 name: "red",
+                name_en: "Red",
                 code: "red",
                 image: "../../picture/type2/012-1.8_4.jpg",
                 thumbnails: [
@@ -427,6 +455,7 @@ const productsData = [
         colors: [
             {
                 name: "brown",
+                name_en: "Brown",
                 code: "brown",
                 image: "../../picture/type2/012-1.9_4.jpg",
                 thumbnails: [
@@ -437,6 +466,7 @@ const productsData = [
             },
             {
                 name: "green-brown",
+                name_en: "Green-Brown",
                 code: "green-brown",
                 image: "../../picture/type2/012-2.3_4.jpg",
                 thumbnails: [
@@ -447,6 +477,7 @@ const productsData = [
             },
             {
                 name: "dark green",
+                name_en: "Dark Green",
                 code: "dark green",
                 image: "../../picture/type2/012-2.4_4.jpg",
                 thumbnails: [
@@ -457,6 +488,7 @@ const productsData = [
             },
             {
                 name: "brown",
+                name_en: "Brown",
                 code: "brown",
                 image: "../../picture/type2/012-2.5_4.jpg",
                 thumbnails: [
@@ -467,6 +499,7 @@ const productsData = [
             },
             {
                 name: "green-brown",
+                name_en: "Green-Brown",
                 code: "green-brown",
                 image: "../../picture/type2/012-2.6_4.jpg",
                 thumbnails: [
@@ -477,6 +510,7 @@ const productsData = [
             },
             {
                 name: "green-brack",
+                name_en: "Green-Brack",
                 code: "green-brack",
                 image: "../../picture/type2/012-2.7_4.jpg",
                 thumbnails: [
@@ -487,6 +521,7 @@ const productsData = [
             },
             {
                 name: "dark green",
+                name_en: "Dark Green",
                 code: "dark green",
                 image: "../../picture/type2/012-2.8_4.jpg",
                 thumbnails: [
@@ -497,6 +532,7 @@ const productsData = [
             },
             {
                 name: "brown",
+                name_en: "Brown",
                 code: "brown",
                 image: "../../picture/type2/012-2.9_4.jpg",
                 thumbnails: [
@@ -507,6 +543,7 @@ const productsData = [
             },
             {
                 name: "dark green-brown",
+                name_en: "Dark Green-Brown",
                 code: "dark green-brown",
                 image: "../../picture/type2/012-3.0_4.jpg",
                 thumbnails: [
@@ -528,6 +565,7 @@ const productsData = [
         colors: [
             {
                 name: "black",
+                name_en: "Black",
                 code: "black",
                 image: "../../picture/type2/012-3.1_4.jpg",
                 thumbnails: [
@@ -539,6 +577,7 @@ const productsData = [
             },
             {
                 name: "brown",
+                name_en: "Brown",
                 code: "brown",
                 image: "../../picture/type2/012-3.2_4.jpg",
                 thumbnails: [
@@ -550,6 +589,7 @@ const productsData = [
             },
             {
                 name: "green",
+                name_en: "Green",
                 code: "green",
                 image: "../../picture/type2/012-3.3_4.jpg",
                 thumbnails: [
@@ -572,6 +612,7 @@ const productsData = [
         colors: [
             {
                 name: "black",
+                name_en: "Black",
                 code: "black",
                 image: "../../picture/type2/012-2.0_1.jpg",
                 thumbnails: [
@@ -580,6 +621,7 @@ const productsData = [
             },
             {
                 name: "brown",
+                name_en: "Brown",
                 code: "brown",
                 image: "../../picture/type2/012-2.1_1.jpg",
                 thumbnails: [

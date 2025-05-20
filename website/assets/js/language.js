@@ -43,9 +43,13 @@ const translations = {
         'home.feature4_desc': '以客户需求为中心，提供个性化解决方案',
         
         // 产品页面
-        'product.title': '产品',
+        'product.title': '产品标题',
         'product.item1': '产品1',
-        'product.name': 'Type1',
+        'product.subtitle': '产品子标题',
+        'product.color_options': '显示颜色',
+        'product.detail': '产品详情',
+        'product.style': '款式：',
+        'product.color_show': '显示颜色：',
         
         // 关于我们页面
         'about.title': '关于我们',
@@ -137,7 +141,9 @@ const translations = {
         'footer.copyright': '© 2025.LONGHO',
         'vision.title': '愿景与计划',
         'vision.desc': '我们致力于成为行业领先的创新型企业，不断推动制鞋工艺与自动化技术的进步。未来，公司将持续加大研发投入，拓展国际市场，提升品牌影响力，并积极践行可持续发展战略，为客户、员工和社会创造更大价值。',
-        'vision.subtitle': '引领行业创新，成就美好未来'
+        'vision.subtitle': '引领行业创新，成就美好未来',
+        'footer.email': 'salesman02@longhoshoes.com',
+        'footer.phone': '+86 123 4567 8910'
     },
     en: {
         // Navigation
@@ -182,10 +188,15 @@ const translations = {
         'home.feature4_desc': 'Customer-centric approach providing personalized solutions',
         
         // Product page
-        'product.title': 'Products',
+        'product.title': 'Product Title',
         'product.item1': 'Product 1',
-        'product.name': 'Type1En',
- 
+
+        'product.subtitle': 'Product Subtitle',
+        'product.color_options': 'Color Options',
+        'product.detail': 'Product Detail',
+        'product.style': 'Style: ',
+        'product.color_show': 'Color Options: ',
+        
         // About Us page
         'about.title': 'About Us',
         'about.content': 'LONGHO Company is dedicated to the research, development and production of intelligent devices, committed to providing high-quality products and excellent service to our customers.',
@@ -273,7 +284,9 @@ const translations = {
         'footer.copyright': '© 2025.LONGHO',
         'vision.title': 'Vision & Plan',
         'vision.desc': 'We have expansion plans, expand plant, equipment, increase personnel, enhance production capacity, enhance competitiveness, and look forward to a bright future. We hope to continue to provide our customers with high quality products and services.',
-        'vision.subtitle': 'Leading Innovation, Shaping the Future'
+        'vision.subtitle': 'Leading Innovation, Shaping the Future',
+        'footer.email': 'salesman02@longhoshoes.com',
+        'footer.phone': '+86 123 4567 8910'
     }
 };
 
