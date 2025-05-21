@@ -35,8 +35,8 @@ function displayProductData(product) {
     // 分类名称映射（中英文）
     const categoryMapping = {
         'type1': { zh: '登山鞋', en: 'Hiking Boots' },
-        'type2': { zh: '固特异工作鞋', en: 'Goodyear Welt Work Shoes' },
-        'type3': { zh: '西部牛仔靴', en: 'Cowboy Leather Outsole Boots' }
+        'type2': { zh: '西部牛仔靴', en: 'Cowboy Leather Outsole Boots' },
+        'type3': { zh: '固特异工作鞋', en: 'Goodyear Welt Work Shoes' }
     };
     const lang = localStorage.getItem('language') || 'en';
     const categoryDisplayName = (categoryMapping[product.category] && categoryMapping[product.category][lang]) || product.category;
@@ -48,13 +48,8 @@ function displayProductData(product) {
     // document.getElementById('product-name').textContent = '产品详情';
     
     // 更新产品信息
-    const productTitleEl = document.querySelector('.product-title');
-    productTitleEl.textContent = categoryDisplayName;
-    productTitleEl.removeAttribute('data-i18n');
-
-    const productSubtitleEl = document.querySelector('.product-subtitle');
-    productSubtitleEl.textContent = '';
-    productSubtitleEl.removeAttribute('data-i18n');
+    document.querySelector('.product-title').textContent = categoryDisplayName;
+    document.querySelector('.product-subtitle').textContent = '';
     
     // 注释掉产品描述文本，暂时不显示
     // document.getElementById('product-description-text').textContent = product.details;
@@ -75,13 +70,7 @@ function displayProductData(product) {
         generateThumbnailsFromColor(firstColor);
         
         // 显示颜色名称
-        const firstColorName = lang === 'en' ? firstColor.name_en : firstColor.name;
-        const colorTextEl = document.querySelector('.color-options h3');
-        colorTextEl.setAttribute('data-i18n-before', 'product.color_show');
-        colorTextEl.textContent = firstColorName;
-        if (typeof setLanguage === 'function') {
-            setLanguage(lang);
-        }
+        document.querySelector('.color-options h3').textContent = `显示颜色：${firstColor.name}`;
     } else {
         // 如果没有颜色选项，则使用默认方式生成缩略图
         generateThumbnails(product);
@@ -230,12 +219,8 @@ function initColorSelection(colors) {
         generateThumbnailsFromColor(selectedColor);
         
         // 更新颜色文本
-        const lang = localStorage.getItem('language') || 'en';
-        const selectedColorName = lang === 'en' ? selectedColor.name_en : selectedColor.name;
         colorTextEl.setAttribute('data-i18n-before', 'product.color_show');
-        colorTextEl.textContent = selectedColorName;
-        if (typeof setLanguage === 'function') {
-            setLanguage(lang);
-        }
+        colorTextEl.textContent = selectedColor.name;
+        if (typeof setLanguage === 'function') setLanguage(localStorage.getItem('language') || 'en');
     });
 } 
