@@ -311,17 +311,57 @@ const productsData = [
         ]
     },
     {
-        id: 6,
+        id: 7,
         category: "type3",
-        image: "../../picture/Product1.jpg",
-        features: [
-            "11111111111111",
-            "22222222222222",
-            "33333333333333",
-            "44444444444444",
-            "55555555555555",
+        image: "../../picture/type3/1.jpg",
+        thumbnails: [
+            "../../picture/type3/1.jpg",
+            "../../picture/type3/2.jpg",
+            "../../picture/type3/3.jpg"
         ]
     },
+    {
+        id: 8,
+        category: "type3",
+        image: "../../picture/type3/4.jpg",
+        thumbnails: [
+            "../../picture/type3/4.jpg",
+            "../../picture/type3/5.jpg",
+            "../../picture/type3/6.jpg"
+        ]
+    },
+    {
+        id: 9,
+        category: "type3",
+        image: "../../picture/type3/B1.jpg",
+        thumbnails: [
+            "../../picture/type3/B1.jpg",
+            "../../picture/type3/B2.jpg",
+            "../../picture/type3/B3.jpg",
+        ]
+    },
+    {
+        id: 10,
+        category: "type3",
+        image: "../../picture/type3/B4.jpg",
+        thumbnails: [
+            "../../picture/type3/B4.jpg",
+            "../../picture/type3/B5.jpg",
+            "../../picture/type3/B6.jpg"
+        ]
+    },
+    {
+        id: 11,
+        category: "type3",
+        image: "../../picture/type3/B7.jpg",
+        thumbnails: [
+            "../../picture/type3/B7.jpg",
+            "../../picture/type3/B8.jpg",
+            "../../picture/type3/B9.jpg"
+        ]
+    },
+    
+
     {
         id: 101,
         category: "type2",

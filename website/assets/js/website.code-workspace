@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../website"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../GEEWAWA/Geewawa"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "website"
+	}
+}
